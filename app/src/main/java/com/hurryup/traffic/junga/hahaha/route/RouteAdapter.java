@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.hurryup.traffic.junga.hahaha.R;
+import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.result.ResultActivity;
 import com.hurryup.traffic.junga.hahaha.model.RouteData;
 
@@ -22,7 +23,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
     ArrayList<RouteData> list;
     Context context;
-    public static final String ROUTE_DATA= "RouteData";
+
     public RouteAdapter(Context context, ArrayList<RouteData> list){
         this.list = list;
         this.context = context;
@@ -48,7 +49,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             public void onClick(View view) {
                 Intent route_intent = new Intent(context, ResultActivity.class);
                 RouteData routeData = list.get(position);
-                route_intent.putExtra(ROUTE_DATA,routeData);
+                route_intent.putExtra(Code.ROUTE_DATA,routeData);
                 context.startActivity(route_intent);
             }
         });

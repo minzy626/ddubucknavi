@@ -6,11 +6,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
+import com.hurryup.traffic.junga.hahaha.map.MapActivity;
 import com.hurryup.traffic.junga.hahaha.R;
+import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.model.RouteData;
-import com.hurryup.traffic.junga.hahaha.route.RouteActivity;
-import com.hurryup.traffic.junga.hahaha.route.RouteAdapter;
 
 /**
  * Created by JUNGA on 2016-08-19.
@@ -18,20 +20,32 @@ import com.hurryup.traffic.junga.hahaha.route.RouteAdapter;
 public class ResultActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView_result;
-
+    private Button btn_result_map;
+    private RouteData data;
+    void init(){
+        recyclerView_result = (RecyclerView)findViewById(R.id.recyclerview_result);
+        btn_result_map = (Button)findViewById(R.id.btn_result_map);
+        btn_result_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                intent.putExtra(Code.ROUTE_DATA,data);
+//                startActivity(intent);
+            }
+        });
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
         Intent intent = getIntent();
-        RouteData data = (RouteData)intent.getSerializableExtra(RouteAdapter.ROUTE_DATA);
+        data = (RouteData)intent.getSerializableExtra(Code.ROUTE_DATA);
+        init();
 
-        recyclerView_result = (RecyclerView)findViewById(R.id.recyclerview_result);
         recyclerView_result.setLayoutManager(new LinearLayoutManager(this));
-
         ResultAdapter adapter = new ResultAdapter(this,data);
-        this.recyclerView_result.setAdapter(adapter);
-
+        recyclerView_result.setAdapter(adapter);
     }
+
+
 }

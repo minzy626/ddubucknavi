@@ -12,12 +12,12 @@
         "source": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/recyclerview_result.xml",
         "source": "/home/lim/AndroidStudioProjects/HAHAHA/app/src/main/res/layout/recyclerview_result.xml"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
@@ -130,6 +130,10 @@
     {
         "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/activity_route.xml",
         "source": "/home/lim/AndroidStudioProjects/HAHAHA/app/src/main/res/layout/activity_route.xml"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/activity_map.xml",
+        "source": "/home/lim/AndroidStudioProjects/HAHAHA/app/src/main/res/layout/activity_map.xml"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/HAHAHA/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
