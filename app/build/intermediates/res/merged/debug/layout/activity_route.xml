@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    tools:context="com.hurryup.traffic.junga.hahaha.RouteActivity">
+    tools:context=".route.RouteActivity">
 
     <TextView
         android:text="helllllow"
