@@ -69,8 +69,12 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
     }
     public int getImageURL(Train train){
         String url = "img_TRAIN_"+train.getLine_Number();
+        String input="";
+
+
+        String filename="img_"+input;
         int imageResource
-                = context.getResources().getIdentifier(url, "drawable",context.getPackageName());
+                = context.getResources().getIdentifier(filename, "drawable",context.getPackageName());
         return imageResource;
     }
 
