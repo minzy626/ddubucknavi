@@ -20,7 +20,7 @@ public class RouteActivity extends AppCompatActivity {
 
     public void init(){
         rv_route_result = (RecyclerView)findViewById(R.id.rv_route_list);
-        tv_route_result = (TextView)findViewById(R.id.tv_route_result);
+        tv_route_result = (TextView)findViewById(R.id.tv_route_startname);
     }
     public ArrayList<RouteData> getTestData(){
         ArrayList<RouteData> routeData_list = new ArrayList<RouteData>();
@@ -29,8 +29,9 @@ public class RouteActivity extends AppCompatActivity {
         Section s = new Section();
         Bus bus = new Bus("1","1234");
         s.setTransport(bus);
-        s.setStart_name("RUACH");
-        s.setEnd_name("SHINCHON");
+        s.setStart_name("ewha university");
+        s.setEnd_name("junga middle school");
+        s.setTime("10");
         section_List.add(s);
 
         RouteData data = new RouteData("AAAA","BBBB","30Min",section_List);

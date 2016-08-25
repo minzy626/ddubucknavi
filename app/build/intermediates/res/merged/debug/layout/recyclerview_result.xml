@@ -1,64 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
 
     <ImageView
         android:id="@+id/iv_transportation"
-        android:layout_width="100dp"
-        android:layout_height="130dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/tv_transportation" />
-
-    <TextView
-        android:id="@+id/tv_transportation"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_above="@+id/tv_Startname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/tv_Startname"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/tv_Endname"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/tv_time"
-        android:layout_alignStart="@+id/tv_time" />
-
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_above="@+id/tv_Endname"
+        android:layout_width="80dp"
+        android:layout_height="110dp"
+        android:background="@drawable/image_walk"
+        android:layout_alignTop="@+id/tv_Startname"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <TextView
+        android:id="@+id/tv_Startname"
+        android:text="이화여자대학교(출발)"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=" => "
-        android:id="@+id/arrow"
-        android:layout_alignTop="@+id/tv_transportation"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:text="약20분"
+        android:layout_below="@+id/tv_Startname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="10dp"
+ />
+
+    <TextView
+        android:id="@+id/tv_Endname"
+        android:text="이대역정류장(중간도착지)"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/tv_time"
+        android:layout_alignStart="@+id/tv_time" />
+
+
+
+
+
+
+
 
 
 </RelativeLayout>
