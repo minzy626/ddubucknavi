@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\JUNGA\\AndroidStudioProjects\\HAHAHA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\JUNGA\\AndroidStudioProjects\\HAHAHA\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\sec-pc\\HAHAHA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\sec-pc\\HAHAHA\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sec-pc\\HAHAHA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\flaticon.png",
+        "source": "C:\\Users\\sec-pc\\HAHAHA\\app\\src\\main\\res\\mipmap-hdpi\\flaticon.png"
     }
 ]

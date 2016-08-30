@@ -4,10 +4,31 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/flaticon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".main.EndSearchActivity" />
+        <activity android:name=".main.ListSearchActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".main.ListSearchActivity_end"
+            android:windowSoftInputMode="stateHidden"/>
+
+        <activity android:name=".main.StartSearchActivity"
+            android:launchMode="standard"/>
         <activity android:name=".route.RouteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,5 +39,12 @@
         <activity android:name=".result.ResultActivity" />
         <activity android:name=".map.MapActivity"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+
+
+
 
 </manifest>
