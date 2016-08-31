@@ -1,5 +1,6 @@
 package com.hurryup.traffic.junga.hahaha.route;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,11 +17,21 @@ import java.util.ArrayList;
 public class RouteActivity extends AppCompatActivity {
 
     RecyclerView rv_route_result;
-    TextView tv_route_result;
+    TextView tv_route_startname;
+    TextView tv_route_endname;
 
     public void init(){
+
+        Intent intent = getIntent();
+        String start =intent.getExtras().getString("start");
+        String end =intent.getExtras().getString("end");
+
         rv_route_result = (RecyclerView)findViewById(R.id.rv_route_list);
-        tv_route_result = (TextView)findViewById(R.id.tv_route_startname);
+        tv_route_startname= (TextView)findViewById(R.id.tv_route_startname);
+        tv_route_endname=(TextView)findViewById(R.id.tv_route_endname);
+        tv_route_startname.setText(start);
+        tv_route_endname.setText(end);
+
     }
     public ArrayList<RouteData> getTestData(){
         ArrayList<RouteData> routeData_list = new ArrayList<RouteData>();

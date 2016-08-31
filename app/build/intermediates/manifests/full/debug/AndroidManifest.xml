@@ -26,11 +26,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.hurryup.traffic.junga.hahaha.main.MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.hurryup.traffic.junga.hahaha.main.EndSearchActivity" />
         <activity
@@ -43,11 +38,6 @@
             android:name="com.hurryup.traffic.junga.hahaha.main.StartSearchActivity"
             android:launchMode="standard" />
         <activity android:name="com.hurryup.traffic.junga.hahaha.route.RouteActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.hurryup.traffic.junga.hahaha.result.ResultActivity" />
         <activity android:name="com.hurryup.traffic.junga.hahaha.map.MapActivity" />

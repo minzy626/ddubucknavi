@@ -16,10 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".main.EndSearchActivity" />
         <activity android:name=".main.ListSearchActivity"
@@ -30,11 +26,7 @@
         <activity android:name=".main.StartSearchActivity"
             android:launchMode="standard"/>
         <activity android:name=".route.RouteActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".result.ResultActivity" />
         <activity android:name=".map.MapActivity"></activity>

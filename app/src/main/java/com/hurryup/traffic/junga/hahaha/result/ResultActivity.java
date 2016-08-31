@@ -8,7 +8,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextClock;
+import android.widget.TextView;
 
+import com.hurryup.traffic.junga.hahaha.main.MainActivity;
 import com.hurryup.traffic.junga.hahaha.map.MapActivity;
 import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.model.Code;
@@ -22,7 +26,9 @@ public class ResultActivity extends AppCompatActivity {
     private RecyclerView recyclerView_result;
     private Button btn_result_map;
     private RouteData data;
+
     void init(){
+
         recyclerView_result = (RecyclerView)findViewById(R.id.recyclerview_result);
         btn_result_map = (Button)findViewById(R.id.btn_result_map);
         btn_result_map.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +51,20 @@ public class ResultActivity extends AppCompatActivity {
         recyclerView_result.setLayoutManager(new LinearLayoutManager(this));
         ResultAdapter adapter = new ResultAdapter(this,data);
         recyclerView_result.setAdapter(adapter);
+        ImageButton bnt_gohome =(ImageButton) findViewById(R.id.btn_result_home);
+        bnt_gohome.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button bnt_map=(Button)findViewById(R.id.btn_result_map);
+        bnt_map.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent= new Intent(getApplicationContext(),MapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
