@@ -4,6 +4,14 @@
         "source": "C:\\Users\\sec-pc\\HAHAHA\\app\\src\\main\\res\\mipmap-mdpi\\flaticon.png"
     },
     {
+        "merged": "C:\\Users\\jylee\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\flaticon.png",
+        "source": "C:\\Users\\jylee\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-mdpi\\flaticon.png"
+    },
+    {
+        "merged": "C:\\Users\\jylee\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\jylee\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\sec-pc\\HAHAHA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\sec-pc\\HAHAHA\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }

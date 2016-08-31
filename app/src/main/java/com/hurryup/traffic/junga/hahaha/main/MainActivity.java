@@ -2,6 +2,8 @@ package com.hurryup.traffic.junga.hahaha.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText et_start ;
     private EditText et_end ;
 
+    private String start;
+    private String end;
+    private String startGpsX, startGpsY;
+    private String endGpsX, endGpsY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         bnt_startSearch.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
-                String start =et_start.getText().toString();
+                start = et_start.getText().toString();
 
                 if(start.length()==0){
                     Toast.makeText(getApplicationContext(),"출발지를 입력해주세요",Toast.LENGTH_SHORT).show();
@@ -45,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Button bnt_endSearch = (Button)findViewById(R.id.bnt_endSearch);
         bnt_endSearch.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                String end =et_end.getText().toString();
+                end =et_end.getText().toString();
 
                 if(end.length()==0){
                     Toast.makeText(getApplicationContext(),"도착지를 입력해주세요.",Toast.LENGTH_SHORT).show();
@@ -62,21 +69,75 @@ public class MainActivity extends AppCompatActivity {
         bnt_change.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
-                String start = et_start.getText().toString();
-                String end = et_end.getText().toString();
+                start = et_start.getText().toString();
+                end = et_end.getText().toString();
                 et_start.setText(end);
                 et_end.setText(start);
             }
         });
+
+//-------------------------------------------- 데이터 받아오는 핸들러 --------------------------------------------
+        final Handler handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+
+                switch (msg.what) {
+                    case 0 :
+                        LocationData result1 = (LocationData)msg.obj;
+                        startGpsX = result1.gpsX;
+                        startGpsY = result1.gpsY;
+
+                        System.out.println("startGpsX1 : " + startGpsX + " startGpsY1 : " + startGpsY);
+                        break;
+                    case 1 :
+                        LocationData result2 = (LocationData)msg.obj;
+                        endGpsX = result2.gpsX;
+                        endGpsY = result2.gpsY;
+
+                        System.out.println("startGpsX2 : " + startGpsX + " startGpsY2 : " + startGpsY);
+                        System.out.println("endGpsX : " + endGpsX + " endGpsY : " + endGpsY);
+
+                        Intent intent = new Intent(MainActivity.this, RouteActivity.class);
+                        intent.putExtra("start", start);
+                        intent.putExtra("end", end);
+                        intent.putExtra("startGpsX", startGpsX);
+                        intent.putExtra("startGpsY", startGpsY);
+                        intent.putExtra("endGpsX", endGpsX);
+                        intent.putExtra("endGpsY", endGpsY);
+//                        System.out.println("start : " + start);
+//                        System.out.println("end : " + end);
+//                        System.out.println("startGpsX : " + startGpsX);
+//                        System.out.println("startGpsY : " + startGpsY);
+//                        System.out.println("endGpsX : " + endGpsX);
+//                        System.out.println("endGpsY : " + endGpsY);
+                        startActivity(intent);
+                        break;
+
+                }
+            }
+        };
+//-------------------------------------------- 데이터 받아오는 핸들러 --------------------------------------------
+
         Button bnt_routeSearch=(Button)findViewById(R.id.bnt_routeSearch);
         bnt_routeSearch.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                String start = et_start.getText().toString();
-                String end = et_end.getText().toString();
-                Intent intent = new Intent(getApplication(),RouteActivity.class);
-                intent.putExtra("start",start);
-                intent.putExtra("end",end);
-                startActivity(intent);
+                start = et_start.getText().toString();
+                end = et_end.getText().toString();
+//                Intent intent = new Intent(getApplication(),RouteActivity.class);
+//                intent.putExtra("start",start);
+//                intent.putExtra("end",end);
+//                startActivity(intent);
+
+                start = "선유도역 9호선";
+                LocationThreadData td1 = new LocationThreadData(start, handler, 0);
+                td1.setDaemon(true);
+                td1.start();
+
+                end = "혜화역 4호선";
+                LocationThreadData td2 = new LocationThreadData(end, handler, 1);
+                td2.setDaemon(true);
+                td2.start();
             }
         });
     }
