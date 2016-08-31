@@ -19,7 +19,7 @@ public class RouteActivity extends AppCompatActivity {
     String start, end, startGpsX, startGpsY, endGpsX, endGpsY;
 
     public void init(){
-
+        System.out.println("RouteActivity");
         Intent intent = getIntent();
         start =intent.getExtras().getString("start");
         end =intent.getExtras().getString("end");
