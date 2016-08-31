@@ -8,6 +8,14 @@
         "source": "C:\\Users\\sec-pc\\HAHAHA\\app\\src\\main\\res\\mipmap-xxxhdpi\\flaticon.png"
     },
     {
+        "merged": "C:\\Users\\JUNGA\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\JUNGA\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\JUNGA\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\flaticon.png",
+        "source": "C:\\Users\\JUNGA\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\flaticon.png"
+    },
+    {
         "merged": "C:\\Users\\jylee\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\jylee\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
