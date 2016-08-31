@@ -88,15 +88,15 @@ public class MainActivity extends AppCompatActivity {
                         startGpsX = result1.gpsX;
                         startGpsY = result1.gpsY;
 
-                        System.out.println("startGpsX1 : " + startGpsX + " startGpsY1 : " + startGpsY);
+//                        System.out.println("startGpsX1 : " + startGpsX + " startGpsY1 : " + startGpsY);
                         break;
                     case 1 :
                         LocationData result2 = (LocationData)msg.obj;
                         endGpsX = result2.gpsX;
                         endGpsY = result2.gpsY;
 
-                        System.out.println("startGpsX2 : " + startGpsX + " startGpsY2 : " + startGpsY);
-                        System.out.println("endGpsX : " + endGpsX + " endGpsY : " + endGpsY);
+//                        System.out.println("startGpsX2 : " + startGpsX + " startGpsY2 : " + startGpsY);
+//                        System.out.println("endGpsX : " + endGpsX + " endGpsY : " + endGpsY);
 
                         Intent intent = new Intent(MainActivity.this, RouteActivity.class);
                         intent.putExtra("start", start);
