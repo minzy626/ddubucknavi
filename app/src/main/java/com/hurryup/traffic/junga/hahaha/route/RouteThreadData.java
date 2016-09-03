@@ -1,6 +1,7 @@
 package com.hurryup.traffic.junga.hahaha.route;
 
 import android.os.Handler;
+import android.os.Message;
 
 import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 import com.hurryup.traffic.junga.hahaha.route.data.Bus;
@@ -26,16 +27,16 @@ import java.util.ArrayList;
 public class RouteThreadData extends Thread {
     private String start, end, startGpsX,startGpsY, endGpsX, endGpsY;
     private Handler handler;
-    private int what;
     //    String gpsX, gpsY;
 
-    RouteThreadData(String start, String end, String startGpsX, String startGpsY, String endGpsX, String endGpsY) {
+    RouteThreadData(String start, String end, String startGpsX, String startGpsY, String endGpsX, String endGpsY, Handler handler) {
         this.start = start;
         this.end = end;
         this.startGpsX = startGpsX;
         this.startGpsY = startGpsY;
         this.endGpsX = endGpsX;
         this.endGpsY = endGpsY;
+        this.handler = handler;
 //        this.handler = handler;
 //        this.what = what;
     }
@@ -91,8 +92,9 @@ public class RouteThreadData extends Thread {
             rd.setEnd((String) jInfo.get("lastEndStation"));
             rd.setPayment((String) jInfo.get("payment"));
             rd.setTotalDistance((String) jInfo.get("totalDistance"));
-            rd.setTime((String) jInfo.get("totalTime"));
+            rd.setTotalTime((String) jInfo.get("totalTime"));
             rd.setTotalStationCount((String) jInfo.get("totalStationCount"));
+            rd.setTotalTimeInfo((String) jInfo.get("totalTimeInfo"));
 
             ArrayList<Section> s = new ArrayList<>();
 
@@ -142,21 +144,23 @@ public class RouteThreadData extends Thread {
 
             System.out.println("rdList.size() : " + rdList.size());
 
+
             /////////////////////////////////////json resultList
             JSONArray resultList = (JSONArray)  jsonObject.get("resultList");
-            System.out.println("resultList.size() : " + resultList.size());
+//            System.out.println("resultList.size() : " + resultList.size());
             for(int i = 0; i<resultList.size(); i++){
                 RouteData result_rd = new RouteData();
                 JSONObject result = (JSONObject) resultList.get(i);
                 JSONObject result_info = (JSONObject) result.get("info");
                 JSONArray result_subPath = (JSONArray) result.get("subPath");
 
-                rd.setTime((String) result_info.get("totalTime"));
-                rd.setStart((String) result_info.get("firstStartStation"));
-                rd.setEnd((String) result_info.get("lastEndStation"));
-                rd.setPayment((String) result_info.get("payment"));
-                rd.setTotalDistance((String) result_info.get("totalDistance"));
-                rd.setTotalStationCount((String) result_info.get("totalStationCount"));
+                result_rd.setTotalTime((String) result_info.get("totalTime"));
+                result_rd.setStart((String) result_info.get("firstStartStation"));
+                result_rd.setEnd((String) result_info.get("lastEndStation"));
+                result_rd.setPayment((String) result_info.get("payment"));
+                result_rd.setTotalDistance((String) result_info.get("totalDistance"));
+                result_rd.setTotalStationCount((String) result_info.get("totalStationCount"));
+                result_rd.setTotalTimeInfo((String) result_info.get("totalTimeInfo"));
 
                 ArrayList<Section> result_s = new ArrayList<>();
 
@@ -208,44 +212,59 @@ public class RouteThreadData extends Thread {
 
 //            System.out.println("rdList.size() :"+rdList.size());
 
-            ///////////////////////////////////print
-            for(int k = 0; k<rdList.size();k++) {
-                RouteData rdr = rdList.get(k);
-                ArrayList<Section> rds;
-                rds=(rdr.getSection());
-                for (int i = 0; i < rds.size(); i++) {
+//            ///////////////////////////////////print
+//            for(int k = 0; k<rdList.size();k++) {
+//                RouteData rdr = rdList.get(k);
+//                ArrayList<Section> rds;
+//                rds=(rdr.getSection());
+//                for (int i = 0; i < rds.size(); i++) {
+//
+////                    System.out.println((i+1)+"번째");
+////                    System.out.println("trafficType : " + rds.get(i).getTrafficType());
+//                    Section section = rds.get(i);
+//
+//                    switch (rds.get(i).getTrafficType()) {
+//                        case "1":
+//                            Train train = (Train) section.getTransport();
+////                            System.out.println("subwayCode : " + train.getLine_number());
+//                            break;
+//                        case "2":
+//                            Bus bus = (Bus) section.getTransport();
+////                            System.out.println("busNo : " + bus.getBus_Number());
+////                            System.out.println("type : " + bus.getLine_number());
+//                            break;
+//                        case "3":
+//                            Walk walk = (Walk) section.getTransport();
+////                            System.out.println("sectionTime : " + walk.getSectionTime());
+//                            break;
+//                        default:
+//                            break;
+//                    }
+//                }
+//            }
 
-//                    System.out.println((i+1)+"번째");
-//                    System.out.println("trafficType : " + rds.get(i).getTrafficType());
-                    Section section = rds.get(i);
 
-                    switch (rds.get(i).getTrafficType()) {
-                        case "1":
-                            Train train = (Train) section.getTransport();
-//                            System.out.println("subwayCode : " + train.getLine_number());
-                            break;
-                        case "2":
-                            Bus bus = (Bus) section.getTransport();
-//                            System.out.println("busNo : " + bus.getBus_Number());
-//                            System.out.println("type : " + bus.getLine_number());
-                            break;
-                        case "3":
-                            Walk walk = (Walk) section.getTransport();
-//                            System.out.println("sectionTime : " + walk.getSectionTime());
-                            break;
-                        default:
-                            break;
-                    }
-                }
+//            System.out.println("start : " + rd.getStart());
+//            System.out.println("end : " + rd.getEnd());
+//            System.out.println("payment : " + rd.getPayment());
+//            System.out.println("totalDistance : " + rd.getTotalDistance());
+//            System.out.println("time : " + rd.getTotalTime());
+//            System.out.println("totalStationCount : " + rd.getTotalStationCount());
+
+            for (int i=0 ; i<rdList.size() ; i++) {
+                System.out.println(rdList.get(i).getStart());
+                System.out.println(rdList.get(i).getEnd());
+                System.out.println(rdList.get(i).getPayment());
+                System.out.println(rdList.get(i).getTotalDistance());
+                System.out.println(rdList.get(i).getTotalTime());
+                System.out.println(rdList.get(i).getTotalStationCount());
+                System.out.println("");
             }
 
-
-            System.out.println("start : " + rd.getStart());
-            System.out.println("end : " + rd.getEnd());
-            System.out.println("payment : " + rd.getPayment());
-            System.out.println("totalDistance : " + rd.getTotalDistance());
-            System.out.println("time : " + rd.getTime());
-            System.out.println("totalStationCount : " + rd.getTotalStationCount());
+            // 핸들러 정의
+            Message message = handler.obtainMessage();
+            message.obj = rdList;
+            handler.sendMessage(message);
 
 
         } catch (HttpStatusException e) {

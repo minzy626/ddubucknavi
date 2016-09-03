@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 //                intent.putExtra("end",end);
 //                startActivity(intent);
 
-//                start = "선유도역 9호선";
+                start = "선유도역 9호선";
                 LocationThreadData td1 = new LocationThreadData(start, handler, 0);
                 td1.setDaemon(true);
                 td1.start();
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-//                end = "혜화역 4호선";
+                end = "혜화역 4호선";
                 LocationThreadData td2 = new LocationThreadData(end, handler, 1);
                 td2.setDaemon(true);
                 td2.start();

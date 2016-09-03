@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.result.ResultActivity;
-import com.hurryup.traffic.junga.hahaha.model.RouteData;
+import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
         holder.tv_route_start.setText(list.get(position).getStart());
         holder.tv_route_end.setText(list.get(position).getEnd());
-        holder.tv_route_time.setText(list.get(position).getTime());
+        holder.tv_route_time.setText(list.get(position).getTotalTime());
 
         holder.route_btn.setOnClickListener(new View.OnClickListener() {
             @Override

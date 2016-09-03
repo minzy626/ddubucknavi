@@ -1,15 +1,21 @@
 package com.hurryup.traffic.junga.hahaha.route;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.hurryup.traffic.junga.hahaha.main.LocationData;
+import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 import com.hurryup.traffic.junga.hahaha.route.RouteThreadData;
 
 import com.hurryup.traffic.junga.hahaha.R;
+
+import java.util.ArrayList;
 
 public class RouteActivity extends AppCompatActivity {
 
@@ -44,7 +50,7 @@ public class RouteActivity extends AppCompatActivity {
 //        s.setTransport(bus);
 //        s.setStart_name("ewha university");
 //        s.setEnd_name("junga middle school");
-//        s.setTime("10");
+//        s.setTotalTime("10");
 //        section_List.add(s);
 //
 //        RouteData data = new RouteData("AAAA","BBBB","30Min",section_List);
@@ -63,7 +69,17 @@ public class RouteActivity extends AppCompatActivity {
         start = start.replaceAll(" ", "+");
         end = end.replaceAll(" ", "+");
 
-        RouteThreadData td1 = new RouteThreadData(start, end, startGpsX, startGpsY, endGpsX, endGpsY);
+        final Handler handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+
+                ArrayList<RouteData> result = (ArrayList)msg.obj;
+                rv_route_result.setAdapter(new RouteAdapter(getApplicationContext(), result));
+            }
+        };
+
+        RouteThreadData td1 = new RouteThreadData(start, end, startGpsX, startGpsY, endGpsX, endGpsY, handler);
         td1.setDaemon(true);
         td1.start();
 
@@ -71,7 +87,6 @@ public class RouteActivity extends AppCompatActivity {
 //        ArrayList<RouteData> routeData_list = getTestData();
 
         rv_route_result.setLayoutManager(new LinearLayoutManager(this));
-//        rv_route_result.setAdapter(new RouteAdapter(this,routeData_list));
 
     }
 }

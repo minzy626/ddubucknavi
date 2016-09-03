@@ -10,7 +10,8 @@ public class RouteData implements Serializable {
     private ArrayList<Section> section ;
     private String start;
     private String end;
-    private String time;
+    private String totalTime;
+    private String totalTimeInfo;
     private String payment;
     private String totalStationCount;
     private String totalDistance;
@@ -63,11 +64,19 @@ public class RouteData implements Serializable {
         this.start = start;
     }
 
-    public String getTime() {
-        return time;
+    public String getTotalTime() {
+        return totalTime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setTotalTime(String totalTime) {
+        this.totalTime = totalTime;
+    }
+
+    public String getTotalTimeInfo() {
+        return totalTimeInfo;
+    }
+
+    public void setTotalTimeInfo(String totalTimeInfo) {
+        this.totalTimeInfo = totalTimeInfo;
     }
 }

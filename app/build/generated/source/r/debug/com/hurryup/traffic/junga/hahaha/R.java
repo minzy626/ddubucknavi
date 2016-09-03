@@ -2032,12 +2032,13 @@ containing a value of this type.
         public static final int item_touch_helper_previous_elevation=0x7f0b0005;
         public static final int iv_result_arrow=0x7f0b006e;
         public static final int iv_route_arrow=0x7f0b0074;
-        public static final int iv_transportation=0x7f0b0089;
+        public static final int iv_transportation=0x7f0b008d;
         public static final int lay_end=0x7f0b0069;
         public static final int lay_start=0x7f0b0065;
         public static final int laylay_end=0x7f0b0061;
         public static final int laylay_start=0x7f0b0060;
-        public static final int layout_route_recyclerview=0x7f0b008d;
+        public static final int layout_route_recyclerview=0x7f0b008e;
+        public static final int layresult_start=0x7f0b0089;
         public static final int line1=0x7f0b0081;
         public static final int line3=0x7f0b0085;
         public static final int linearLayout=0x7f0b0055;
@@ -2104,17 +2105,17 @@ containing a value of this type.
         public static final int tv_map_time=0x7f0b006c;
         public static final int tv_result_Endname=0x7f0b006f;
         public static final int tv_result_Startname=0x7f0b006d;
-        public static final int tv_route_end=0x7f0b0090;
+        public static final int tv_route_end=0x7f0b0091;
         public static final int tv_route_endname=0x7f0b0075;
-        public static final int tv_route_start=0x7f0b008f;
+        public static final int tv_route_start=0x7f0b0090;
         public static final int tv_route_startname=0x7f0b0073;
-        public static final int tv_route_time=0x7f0b0091;
+        public static final int tv_route_time=0x7f0b0092;
         public static final int tv_search=0x7f0b0056;
         public static final int tv_start=0x7f0b0067;
         public static final int tv_time=0x7f0b008b;
         public static final int up=0x7f0b0009;
         public static final int useLogo=0x7f0b0013;
-        public static final int view_card=0x7f0b008e;
+        public static final int view_card=0x7f0b008f;
         public static final int withText=0x7f0b0022;
         public static final int wrap_content=0x7f0b001a;
     }
