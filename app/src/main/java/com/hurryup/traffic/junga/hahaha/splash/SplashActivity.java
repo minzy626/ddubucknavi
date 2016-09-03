@@ -24,7 +24,7 @@ public class SplashActivity extends Activity{
                 Animation.RELATIVE_TO_SELF, 0,
                 Animation.RELATIVE_TO_SELF, 0);
         ani.setFillAfter(true); // 애니메이션 후 이동한좌표에
-        ani.setDuration(2000); //지속시간
+        ani.setDuration(3500); //지속시간
 
         img.startAnimation(ani);
 

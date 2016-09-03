@@ -28,7 +28,9 @@
         <activity android:name=".route.RouteActivity">
 
         </activity>
-        <activity android:name=".result.ResultActivity" />
+        <activity android:name=".result.ResultActivity">
+        </activity>
+
         <activity android:name=".map.MapActivity"></activity>
     </application>
 

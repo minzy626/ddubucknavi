@@ -39,7 +39,8 @@
             android:launchMode="standard" />
         <activity android:name="com.hurryup.traffic.junga.hahaha.route.RouteActivity" >
         </activity>
-        <activity android:name="com.hurryup.traffic.junga.hahaha.result.ResultActivity" />
+        <activity android:name="com.hurryup.traffic.junga.hahaha.result.ResultActivity" >
+        </activity>
         <activity android:name="com.hurryup.traffic.junga.hahaha.map.MapActivity" />
     </application>
 

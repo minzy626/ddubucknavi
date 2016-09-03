@@ -51,13 +51,6 @@ public class ResultActivity extends AppCompatActivity {
         recyclerView_result.setLayoutManager(new LinearLayoutManager(this));
         ResultAdapter adapter = new ResultAdapter(this,data);
         recyclerView_result.setAdapter(adapter);
-        ImageButton bnt_gohome =(ImageButton) findViewById(R.id.btn_result_home);
-        bnt_gohome.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
-            }
-        });
         Button bnt_map=(Button)findViewById(R.id.btn_result_map);
         bnt_map.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
