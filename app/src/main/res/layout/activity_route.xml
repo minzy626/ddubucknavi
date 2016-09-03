@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,35 +7,159 @@
     android:background="#22d7d7"
     tools:context=".route.RouteActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_route_startname"
+            android:hint="STARTNAME"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/iv_route_arrow"
+            android:background="@drawable/image_route_arrow1"
+            />
+        <TextView
+            android:id="@+id/tv_route_endname"
+            android:hint="ENDNAME"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
     <TextView
-        android:hint="STARTNAME"
+        android:text="갈아타는거 싫어!"
         android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_route_startname"
-/>
-
-    <ImageView
-        android:layout_marginTop="5dp"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/iv_route_arrow"
-        android:background="@drawable/image_route_arrow1"
-        android:layout_alignTop="@+id/tv_route_startname"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:hint="ENDNAME"
-        android:textSize="20dp"
         android:layout_marginRight="10dp"
-        android:layout_width="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_route_endname"
-        android:layout_alignTop="@+id/tv_route_startname"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ll_firstline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="aaaaaaaaaaaaaaaaaaa"/>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_line2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="버스정류장"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:textSize="20dp"
+                android:id="@+id/tv_line2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_line2_1"
+                android:text="ddd"
+                />
+            <TextView
+                android:id="@+id/tv_line2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_line2_2"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="|"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_line2_3"
+                android:textSize="20dp"
+                android:text="3555"
+                />
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+
+                android:text="34"
+                />
+            <TextView
+                android:id="@+id/slice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_time"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="|"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/slice2"
+                android:textSize="20dp"
+                android:text="3555"
+                />
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="34"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_route_list"
@@ -50,4 +174,4 @@
         android:layout_marginRight="10dp">
     </android.support.v7.widget.RecyclerView>
 
-</RelativeLayout>
+</LinearLayout>
