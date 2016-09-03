@@ -133,6 +133,11 @@ public class MainActivity extends AppCompatActivity {
                 LocationThreadData td1 = new LocationThreadData(start, handler, 0);
                 td1.setDaemon(true);
                 td1.start();
+                try {
+                    td1.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
 //                end = "혜화역 4호선";
                 LocationThreadData td2 = new LocationThreadData(end, handler, 1);
