@@ -109,6 +109,14 @@ public class RouteThreadData extends Thread {
                         JSONObject js = (JSONObject) j.get("lane");
                         train.setLine_number((String) js.get("subwayCode"));
 
+                        section.setStart_name((String) j.get("startName"));
+                        section.setStart_gpsX((String) j.get("startX"));
+                        section.setStart_gpsY((String) j.get("startY"));
+                        section.setEnd_name((String) j.get("endName"));
+                        section.setEnd_gpsX((String) j.get("endX"));
+                        section.setEnd_gpsY((String) j.get("endY"));
+                        section.setTime((String) j.get("sectionTime"));
+
                         section.setTransport(train);
                         s.add(section);
                         break;
@@ -121,6 +129,14 @@ public class RouteThreadData extends Thread {
                             bus.setBus_Number((String) jl.get("busNo"));
                             bus.setLine_number((String) jl.get("type"));
 
+                            section.setStart_name((String) j.get("startName"));
+                            section.setStart_gpsX((String) j.get("startX"));
+                            section.setStart_gpsY((String) j.get("startY"));
+                            section.setEnd_name((String) j.get("endName"));
+                            section.setEnd_gpsX((String) j.get("endX"));
+                            section.setEnd_gpsY((String) j.get("endY"));
+                            section.setTime((String) j.get("sectionTime"));
+
                             section.setTransport(bus);
                             s.add(section);
                         }
@@ -128,7 +144,7 @@ public class RouteThreadData extends Thread {
 
                     case "3":
                         Walk walk = new Walk();
-                        walk.setSectionTime((String) j.get("sectionTime"));
+                        section.setTime((String) j.get("sectionTime"));
 
                         section.setTransport(walk);
                         s.add(section);
@@ -141,9 +157,6 @@ public class RouteThreadData extends Thread {
 
             rd.setSection(s);
             rdList.add(rd);
-
-            System.out.println("rdList.size() : " + rdList.size());
-
 
             /////////////////////////////////////json resultList
             JSONArray resultList = (JSONArray)  jsonObject.get("resultList");
@@ -175,6 +188,14 @@ public class RouteThreadData extends Thread {
                             JSONObject js = (JSONObject) rj.get("lane");
                             train.setLine_number((String) js.get("subwayCode"));
 
+                            section.setStart_name((String) rj.get("startName"));
+                            section.setStart_gpsX((String) rj.get("startX"));
+                            section.setStart_gpsY((String) rj.get("startY"));
+                            section.setEnd_name((String) rj.get("endName"));
+                            section.setEnd_gpsX((String) rj.get("endX"));
+                            section.setEnd_gpsY((String) rj.get("endY"));
+                            section.setTime((String) rj.get("sectionTime"));
+
                             section.setTransport(train);
                             result_s.add(section);
                             break;
@@ -187,6 +208,14 @@ public class RouteThreadData extends Thread {
                                 bus.setBus_Number((String) jl.get("busNo"));
                                 bus.setLine_number((String) jl.get("type"));
 
+                                section.setStart_name((String) rj.get("startName"));
+                                section.setStart_gpsX((String) rj.get("startX"));
+                                section.setStart_gpsY((String) rj.get("startY"));
+                                section.setEnd_name((String) rj.get("endName"));
+                                section.setEnd_gpsX((String) rj.get("endX"));
+                                section.setEnd_gpsY((String) rj.get("endY"));
+                                section.setTime((String) rj.get("sectionTime"));
+
                                 section.setTransport(bus);
                                 result_s.add(section);
                             }
@@ -194,7 +223,7 @@ public class RouteThreadData extends Thread {
 
                         case "3":
                             Walk walk = new Walk();
-                            walk.setSectionTime((String) rj.get("sectionTime"));
+                            section.setTime((String) rj.get("sectionTime"));
 
                             section.setTransport(walk);
                             result_s.add(section);
@@ -252,13 +281,23 @@ public class RouteThreadData extends Thread {
 //            System.out.println("totalStationCount : " + rd.getTotalStationCount());
 
             for (int i=0 ; i<rdList.size() ; i++) {
-                System.out.println(rdList.get(i).getStart());
-                System.out.println(rdList.get(i).getEnd());
-                System.out.println(rdList.get(i).getPayment());
-                System.out.println(rdList.get(i).getTotalDistance());
-                System.out.println(rdList.get(i).getTotalTime());
-                System.out.println(rdList.get(i).getTotalStationCount());
-                System.out.println("");
+//                System.out.println(rdList.get(i).getStart());
+//                System.out.println(rdList.get(i).getEnd());
+//                System.out.println(rdList.get(i).getPayment());
+//                System.out.println(rdList.get(i).getTotalDistance());
+//                System.out.println(rdList.get(i).getTotalTime());
+//                System.out.println(rdList.get(i).getTotalStationCount());
+                for (int j=0 ; j<rdList.get(i).getSection().size() ; j++) {
+                    System.out.println("getTrafficType : " + rdList.get(i).getSection().get(j).getTrafficType());
+                    System.out.println("getStart_gpsX : " + rdList.get(i).getSection().get(j).getStart_gpsX());
+                    System.out.println("getStart_gpsY : " + rdList.get(i).getSection().get(j).getStart_gpsY());
+                    System.out.println("getStart_name : " + rdList.get(i).getSection().get(j).getStart_name());
+                    System.out.println("getEnd_name : " + rdList.get(i).getSection().get(j).getEnd_name());
+                    System.out.println("getEnd_gpsX : " + rdList.get(i).getSection().get(j).getEnd_gpsX());
+                    System.out.println("getEnd_gpsY : " + rdList.get(i).getSection().get(j).getEnd_gpsY());
+                    System.out.println("getTime : " + rdList.get(i).getSection().get(j).getTime());
+                    System.out.println("");
+                }
             }
 
             // 핸들러 정의
