@@ -106,14 +106,4 @@ public class Section implements Serializable {
     public void setEnd_gpsY(String end_gpsY) {
         this.end_gpsY = end_gpsY;
     }
-//    // ------- subPath ---
-//    String trafficType;     // 도보, 버스, 지하철
-//    String sectionTime; // 사이사이 시간
-//
-//    // ------- subPath -- lane --
-//    String type;    // 버스 색깔
-//    String busNo;
-//
-//    // ------- subPath -- lane --
-//    String subwayCode;  //  지하철 호선
 }
