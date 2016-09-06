@@ -18,7 +18,6 @@ public class Section implements Serializable {
     private String guide;
     private String distance;
 
-
     public void setDistance(String distance) {
         this.distance = distance;
     }

@@ -12,6 +12,7 @@ import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 import com.hurryup.traffic.junga.hahaha.route.data.Section;
 import com.hurryup.traffic.junga.hahaha.route.data.Train;
 import com.hurryup.traffic.junga.hahaha.route.data.Transport;
+import com.hurryup.traffic.junga.hahaha.route.data.Walk;
 
 import java.util.ArrayList;
 
@@ -45,10 +46,12 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             Bus bus = (Bus)trans;
             //holder.tv_Trans.setText(bus.getBus_Number());
 //            holder.iv_Trans.setImageResource(getImageURL(bus));
-        }else{
+        }else if(trans instanceof Train){
             Train train = (Train)trans;
             //holder.tv_Trans.setText(train.getLine_Number());
 //            holder.iv_Trans.setImageResource(getImageURL(train));
+        }else{
+            Walk walk = (Walk)trans;
         }
 
         holder.tv_Start.setText(section.getStart_name());
