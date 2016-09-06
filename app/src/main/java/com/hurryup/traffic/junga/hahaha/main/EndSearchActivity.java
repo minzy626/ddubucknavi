@@ -232,7 +232,7 @@ public class EndSearchActivity  extends AppCompatActivity implements MapView.Map
         }
     }
 
-    private Object fetch(String address) throws MalformedURLException,IOException {
+    private Object fetch(String address) throws IOException {
         URL url = new URL(address);
         Object content = url.getContent();
         return content;

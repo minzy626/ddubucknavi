@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Log.d("123","MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMAIN");
         et_start = (EditText)findViewById(R.id.et_start);
         et_end =(EditText)findViewById(R.id.et_end);
         Button bnt_startSearch=(Button)findViewById(R.id.bnt_startSearch);

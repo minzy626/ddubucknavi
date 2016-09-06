@@ -7,6 +7,10 @@ public class Train extends Transport {
     private final String trans_type = "TRAIN";
     private String line_number;
 
+    public Train(){}
+    public Train(String line_number){
+        this.line_number = line_number;
+    }
     public String getLine_number() {
         return line_number;
     }

@@ -8,6 +8,11 @@ public class Bus extends Transport{
     private String bus_Number;
     private String line_number;
 
+    public Bus(){}
+    public Bus(String bus_Number, String line_number){
+        this.bus_Number = bus_Number;
+        this.line_number = line_number;
+    }
     public String getLine_number() {
         return line_number;
     }

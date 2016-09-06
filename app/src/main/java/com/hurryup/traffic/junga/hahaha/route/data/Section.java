@@ -8,14 +8,32 @@ import java.io.Serializable;
 public class Section implements Serializable {
     private Transport transport;
     private String start_name;
-    private long start_gpsX;
-    private long start_gpsY;
-    private long end_gpsX;
-    private long end_gpsY;
+    private String start_gpsX;
+    private String start_gpsY;
+    private String end_gpsX;
+    private String end_gpsY;
     private String end_name;
-    private long end_gps;
     private String time;
     private String trafficType;
+    private String guide;
+    private String distance;
+
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public String getGuide() {
+        return guide;
+    }
+
+    public void setGuide(String guide) {
+        this.guide = guide;
+    }
 
     public String getTrafficType() {
         return trafficType;
@@ -23,14 +41,6 @@ public class Section implements Serializable {
 
     public void setTrafficType(String trafficType) {
         this.trafficType = trafficType;
-    }
-
-    public long getEnd_gps() {
-        return end_gps;
-    }
-
-    public void setEnd_gps(long end_gps) {
-        this.end_gps = end_gps;
     }
 
     public String getEnd_name() {
@@ -41,11 +51,11 @@ public class Section implements Serializable {
         this.end_name = end_name;
     }
 
-    public long getStart_gpsX() {
+    public String getStart_gpsX() {
         return start_gpsX;
     }
 
-    public void setStart_gpsX(long start_gpsX) {
+    public void setStart_gpsX(String start_gpsX) {
         this.start_gpsX = start_gpsX;
     }
 
@@ -73,27 +83,27 @@ public class Section implements Serializable {
         this.transport = transport;
     }
 
-    public long getStart_gpsY() {
+    public String getStart_gpsY() {
         return start_gpsY;
     }
 
-    public void setStart_gpsY(long start_gpsY) {
+    public void setStart_gpsY(String start_gpsY) {
         this.start_gpsY = start_gpsY;
     }
 
-    public long getEnd_gpsX() {
+    public String getEnd_gpsX() {
         return end_gpsX;
     }
 
-    public void setEnd_gpsX(long end_gpsX) {
+    public void setEnd_gpsX(String end_gpsX) {
         this.end_gpsX = end_gpsX;
     }
 
-    public long getEnd_gpsY() {
+    public String getEnd_gpsY() {
         return end_gpsY;
     }
 
-    public void setEnd_gpsY(long end_gpsY) {
+    public void setEnd_gpsY(String end_gpsY) {
         this.end_gpsY = end_gpsY;
     }
 //    // ------- subPath ---

@@ -5,17 +5,17 @@ package com.hurryup.traffic.junga.hahaha.route.data;
  */
 public class Walk extends Transport {
     private final String trans_type = "WALK";
-    private String sectionTime;
+//    private String sectionTime;
 
     public String getTrans_type() {
         return trans_type;
     }
 
-    public String getSectionTime() {
-        return sectionTime;
-    }
+//    public String getSectionTime() {
+//        return sectionTime;
+//    }
 
-    public void setSectionTime(String sectionTime) {
-        this.sectionTime = sectionTime;
-    }
+//    public void setSectionTime(String sectionTime) {
+//        this.sectionTime = sectionTime;
+//    }
 }

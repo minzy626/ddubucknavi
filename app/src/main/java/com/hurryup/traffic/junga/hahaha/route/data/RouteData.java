@@ -1,5 +1,6 @@
 package com.hurryup.traffic.junga.hahaha.route.data;
 
+import java.io.InterruptedIOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -7,14 +8,52 @@ import java.util.ArrayList;
  * Created by jylee on 2016-07-13.
  */
 public class RouteData implements Serializable {
-    private ArrayList<Section> section ;
+    private ArrayList<Section> sectionList ;
     private String start;
     private String end;
     private String totalTime;
     private String totalTimeInfo;
     private String payment;
     private String totalStationCount;
+
+    public int getBusStationCount() {
+        if(busStationCount==null){
+            return 0;
+        }
+            int result = Integer.parseInt(busStationCount);
+            return result;
+
+
+    }
+
+    public void setBusStationCount(String busStationCount) {
+        this.busStationCount = busStationCount;
+    }
+
+    public int getSubwayStationCount() {
+        if(busStationCount==null){
+            return 0;
+        }
+        int result = Integer.parseInt(subwayStationCount);
+        return result;
+    }
+
+    public void setSubwayStationCount(String subwayStationCount) {
+        this.subwayStationCount = subwayStationCount;
+    }
+
+    public String getWalkTotaldis() {
+        return walkTotaldis;
+    }
+
+    public void setWalkTotaldis(String walkTotaldis) {
+        this.walkTotaldis = walkTotaldis;
+    }
+
     private String totalDistance;
+    private String busStationCount;
+    private String subwayStationCount;
+    private String walkTotaldis;
 
     public String getPayment() {
         return payment;
@@ -32,8 +71,9 @@ public class RouteData implements Serializable {
         this.totalStationCount = totalStationCount;
     }
 
-    public String getTotalDistance() {
-        return totalDistance;
+    public long getTotalDistance() {
+        long result = Long.parseLong(totalDistance);
+        return result;
     }
 
     public void setTotalDistance(String totalDistance) {
@@ -48,12 +88,12 @@ public class RouteData implements Serializable {
         this.end = end;
     }
 
-    public ArrayList<Section> getSection() {
-        return section;
+    public ArrayList<Section> getSectionList() {
+        return sectionList;
     }
 
-    public void setSection(ArrayList<Section> section) {
-        this.section = section;
+    public void setSectionList(ArrayList<Section> sectionList) {
+        this.sectionList = sectionList;
     }
 
     public String getStart() {

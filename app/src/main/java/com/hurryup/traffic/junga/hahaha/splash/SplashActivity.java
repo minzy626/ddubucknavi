@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ public class SplashActivity extends Activity{
     protected void onCreate(Bundle savedInstanceStat) {
         super.onCreate(savedInstanceStat);
         setContentView(R.layout.activity_splash);
+
         ImageView img = (ImageView)findViewById(R.id.splash_image);
 
         TranslateAnimation ani = new TranslateAnimation(

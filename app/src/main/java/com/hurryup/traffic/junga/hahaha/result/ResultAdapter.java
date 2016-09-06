@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hurryup.traffic.junga.hahaha.R;
-import com.hurryup.traffic.junga.hahaha.model.Bus;
-import com.hurryup.traffic.junga.hahaha.model.RouteData;
-import com.hurryup.traffic.junga.hahaha.model.Section;
-import com.hurryup.traffic.junga.hahaha.model.Train;
-import com.hurryup.traffic.junga.hahaha.model.Transport;
+import com.hurryup.traffic.junga.hahaha.route.data.Bus;
+import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
+import com.hurryup.traffic.junga.hahaha.route.data.Section;
+import com.hurryup.traffic.junga.hahaha.route.data.Train;
+import com.hurryup.traffic.junga.hahaha.route.data.Transport;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
     public ResultAdapter(Context context, RouteData routeData_result){
         this.routeData_result = routeData_result;
         this.context = context;
-        section_list = routeData_result.getSection();
+        section_list = routeData_result.getSectionList();
     }
 
     @Override
@@ -61,21 +61,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
     public int getItemCount() {
         return section_list.size();
     }
-    public int getImageURL(Bus bus){
-        String url = "img_BUS_"+bus.getLine_Number();
-        int imageResource
-                = context.getResources().getIdentifier(url, "drawable",context.getPackageName());
-        return imageResource;
-    }
-    public int getImageURL(Train train){
-        String url = "img_TRAIN_"+train.getLine_Number();
-        String input="";
 
-
-        String filename="img_"+input;
-        int imageResource
-                = context.getResources().getIdentifier(filename, "drawable",context.getPackageName());
-        return imageResource;
-    }
 
 }

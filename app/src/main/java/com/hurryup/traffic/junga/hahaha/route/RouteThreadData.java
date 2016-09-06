@@ -2,7 +2,10 @@ package com.hurryup.traffic.junga.hahaha.route;
 
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
+import android.util.Log;
 
+import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 import com.hurryup.traffic.junga.hahaha.route.data.Bus;
 import com.hurryup.traffic.junga.hahaha.route.data.Section;
@@ -44,7 +47,7 @@ public class RouteThreadData extends Thread {
     @Override
     public void run() {
 //        super.run();
-
+        Log.d("RouteThread","RouteThread");
         try {
             String startStNm = java.net.URLEncoder.encode(start, "UTF8");
             String endStNm = java.net.URLEncoder.encode(end, "UTF8");
@@ -76,62 +79,72 @@ public class RouteThreadData extends Thread {
             Element contents = doc.getAllElements().get(0);
 
             String text = contents.text(); // 원하는 부분은 Elements형태로 되어 있으므로 이를 String 형태로 바꾸어 준다.
-//            System.out.println(text);
-//            System.out.println();
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) jsonParser.parse(text);
-            JSONObject jTransfer = (JSONObject) jsonObject.get("miniTransfer");
-            JSONObject jInfo = (JSONObject) jTransfer.get("info");
-            JSONArray jSubPath = (JSONArray) jTransfer.get("subPath");
-            JSONArray jResultList = (JSONArray) jsonObject.get("resultList");
+            JSONObject jTransfer = (JSONObject) jsonObject.get(Code.MINI_TRANSFER);
+            JSONObject jInfo = (JSONObject) jTransfer.get(Code.MINI_INFO);
+            JSONArray jSubPath = (JSONArray) jTransfer.get(Code.MINI_SUBPATH);
 
-            ArrayList<RouteData> rdList = new ArrayList<>();
+            ArrayList<RouteData> routeDataList = new ArrayList<>();
 
-            RouteData rd = new RouteData();
-            rd.setStart((String) jInfo.get("firstStartStation"));
-            rd.setEnd((String) jInfo.get("lastEndStation"));
-            rd.setPayment((String) jInfo.get("payment"));
-            rd.setTotalDistance((String) jInfo.get("totalDistance"));
-            rd.setTotalTime((String) jInfo.get("totalTime"));
-            rd.setTotalStationCount((String) jInfo.get("totalStationCount"));
-            rd.setTotalTimeInfo((String) jInfo.get("totalTimeInfo"));
+            RouteData routeData = new RouteData();
+            routeData.setStart((String) jInfo.get("firstStartStation"));
+            routeData.setEnd((String) jInfo.get("lastEndStation"));
+            routeData.setPayment((String) jInfo.get("payment"));
+            routeData.setTotalDistance((String) jInfo.get("totalDistance"));
+            routeData.setTotalTime((String) jInfo.get("totalTime"));
+            routeData.setTotalStationCount((String) jInfo.get("totalStationCount"));
+            routeData.setBusStationCount((String)jInfo.get(Code.BUS_STATION_COUNT));
+            routeData.setSubwayStationCount((String)jInfo.get(Code.SUBWAY_STATION_COUNT));
+            routeData.setWalkTotaldis((String)jInfo.get(Code.WALK_DIS));
+//            routeData.setTotalTimeInfo((String) jInfo.get("totalTimeInfo"));
 
-            ArrayList<Section> s = new ArrayList<>();
+            ArrayList<Section> sectionList = new ArrayList<>();
 
             for (int i = 0; i < jSubPath.size(); i++) {
                 Section section = new Section();
-                JSONObject j = (JSONObject) jSubPath.get(i);
-                section.setTrafficType((String) j.get("trafficType"));
-
+                JSONObject jsubPath = (JSONObject) jSubPath.get(i);
+                section.setTrafficType((String) jsubPath.get("trafficType"));
+                section.setTime((String)jsubPath.get(Code.SECTION_TIME));
+                section.setDistance((String)jsubPath.get(Code.DISTANCE));
+                section.setGuide((String)jsubPath.get(Code.GUIDE));
+                section.setStart_name((String)jsubPath.get(Code.START_NAME));
+                Log.d("RouteThread",i+" "+section.getStart_name());
+                section.setStart_gpsX((String)jsubPath.get(Code.START_X));
+                section.setStart_gpsY((String)jsubPath.get(Code.START_Y));
+                section.setEnd_name((String)jsubPath.get(Code.END_NAME));
+                section.setEnd_gpsY((String)jsubPath.get(Code.END_X));
+                section.setEnd_gpsY((String)jsubPath.get(Code.END_Y));
                 switch (section.getTrafficType()) {
                     case "1":
                         Train train = new Train();
-                        JSONObject js = (JSONObject) j.get("lane");
-                        train.setLine_number((String) js.get("subwayCode"));
-
+                        JSONObject jLane = (JSONObject) jsubPath.get(Code.LANE);
+                        String str = (String)jLane.get(Code.LANE_SUBWAYCODE);
+                        train.setLine_number(str);
                         section.setTransport(train);
-                        s.add(section);
+                        String startName = section.getStart_name()+"역";
+                        String endName = section.getEnd_name()+"역";
+                        section.setStart_name(startName);
+                        section.setEnd_name(endName);
+                        sectionList.add(section);
                         break;
 
                     case "2":
                         Bus bus = new Bus();
-                        JSONArray jb = (JSONArray) j.get("lane");
+                        JSONArray jb = (JSONArray) jsubPath.get("lane");
                         for (int n = 0; n < jb.size(); n++) {
                             JSONObject jl = (JSONObject) jb.get(n);
-                            bus.setBus_Number((String) jl.get("busNo"));
-                            bus.setLine_number((String) jl.get("type"));
-
+                            bus.setBus_Number((String) jl.get(Code.LANE_BUSNO));
+                            bus.setLine_number((String) jl.get(Code.LANE_BUSTYPE));
                             section.setTransport(bus);
-                            s.add(section);
                         }
+                        sectionList.add(section);
                         break;
 
                     case "3":
                         Walk walk = new Walk();
-                        walk.setSectionTime((String) j.get("sectionTime"));
-
                         section.setTransport(walk);
-                        s.add(section);
+                        sectionList.add(section);
                         break;
 
                     default:
@@ -139,10 +152,10 @@ public class RouteThreadData extends Thread {
                 }
             }
 
-            rd.setSection(s);
-            rdList.add(rd);
+            routeData.setSectionList(sectionList);
+            routeDataList.add(routeData);
 
-            System.out.println("rdList.size() : " + rdList.size());
+            System.out.println("rdList.size() : " + routeDataList.size());
 
 
             /////////////////////////////////////json resultList
@@ -161,14 +174,24 @@ public class RouteThreadData extends Thread {
                 result_rd.setTotalDistance((String) result_info.get("totalDistance"));
                 result_rd.setTotalStationCount((String) result_info.get("totalStationCount"));
                 result_rd.setTotalTimeInfo((String) result_info.get("totalTimeInfo"));
-
+                result_rd.setBusStationCount((String)jInfo.get(Code.BUS_STATION_COUNT));
+                result_rd.setSubwayStationCount((String)jInfo.get(Code.SUBWAY_STATION_COUNT));
+                result_rd.setWalkTotaldis((String)jInfo.get(Code.WALK_DIS));
                 ArrayList<Section> result_s = new ArrayList<>();
 
                 for (int k = 0; k < result_subPath.size(); k++) {
                     Section section = new Section();
                     JSONObject rj = (JSONObject) result_subPath.get(k);
                     section.setTrafficType((String) rj.get("trafficType"));
-
+                    section.setTime((String)rj.get(Code.SECTION_TIME));
+                    section.setDistance((String)rj.get(Code.DISTANCE));
+                    section.setGuide((String)rj.get(Code.GUIDE));
+                    section.setStart_name((String)rj.get(Code.START_NAME));
+                    section.setStart_gpsX((String)rj.get(Code.START_X));
+                    section.setStart_gpsY((String)rj.get(Code.START_Y));
+                    section.setEnd_name((String)rj.get(Code.END_NAME));
+                    section.setEnd_gpsY((String)rj.get(Code.END_X));
+                    section.setEnd_gpsY((String)rj.get(Code.END_Y));
                     switch (section.getTrafficType()) {
                         case "1":
                             Train train = new Train();
@@ -176,6 +199,7 @@ public class RouteThreadData extends Thread {
                             train.setLine_number((String) js.get("subwayCode"));
 
                             section.setTransport(train);
+                            if(section==null)Log.d("RouteThread","11111111111111111");
                             result_s.add(section);
                             break;
 
@@ -188,15 +212,15 @@ public class RouteThreadData extends Thread {
                                 bus.setLine_number((String) jl.get("type"));
 
                                 section.setTransport(bus);
-                                result_s.add(section);
                             }
+                            if(section==null)Log.d("RouteThread","22222222222222222");
+                            result_s.add(section);
                             break;
 
                         case "3":
                             Walk walk = new Walk();
-                            walk.setSectionTime((String) rj.get("sectionTime"));
-
                             section.setTransport(walk);
+                            if(section==null)Log.d("RouteThread","33333333333333333");
                             result_s.add(section);
                             break;
 
@@ -206,8 +230,8 @@ public class RouteThreadData extends Thread {
                 }
 
 
-                result_rd.setSection(result_s);
-                rdList.add(result_rd);
+                result_rd.setSectionList(result_s);
+                routeDataList.add(result_rd);
             }
 
 //            System.out.println("rdList.size() :"+rdList.size());
@@ -251,19 +275,19 @@ public class RouteThreadData extends Thread {
 //            System.out.println("time : " + rd.getTotalTime());
 //            System.out.println("totalStationCount : " + rd.getTotalStationCount());
 
-            for (int i=0 ; i<rdList.size() ; i++) {
-                System.out.println(rdList.get(i).getStart());
-                System.out.println(rdList.get(i).getEnd());
-                System.out.println(rdList.get(i).getPayment());
-                System.out.println(rdList.get(i).getTotalDistance());
-                System.out.println(rdList.get(i).getTotalTime());
-                System.out.println(rdList.get(i).getTotalStationCount());
+            for (int i=0 ; i<routeDataList.size() ; i++) {
+                System.out.println(routeDataList.get(i).getStart());
+                System.out.println(routeDataList.get(i).getEnd());
+                System.out.println(routeDataList.get(i).getPayment());
+                System.out.println(routeDataList.get(i).getTotalDistance());
+                System.out.println(routeDataList.get(i).getTotalTime());
+                System.out.println(routeDataList.get(i).getTotalStationCount());
                 System.out.println("");
             }
 
             // 핸들러 정의
             Message message = handler.obtainMessage();
-            message.obj = rdList;
+            message.obj = routeDataList;
             handler.sendMessage(message);
 
 
