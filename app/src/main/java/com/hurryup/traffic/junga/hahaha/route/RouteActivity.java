@@ -114,17 +114,17 @@ public class RouteActivity extends AppCompatActivity {
                     if(transport instanceof Bus){
                         url.append("bus");
                         int resource = getImagetURL.getImagetURL((Bus)transport);
-                        iv.setImageResource(R.drawable.bus_blue);
+                        iv.setImageResource(R.drawable.img_bus_1);
                     }else if(transport instanceof Train){
                         url.append("train");
                         int resource = getImagetURL.getImagetURL((Train)transport);
-                        iv.setImageResource(R.drawable.bus_blue);
+                        iv.setImageResource(R.drawable.img_bus_1);
                     }else if(transport instanceof Walk){
                         url.append("walk");
                         int resource = getImagetURL.getImagetURL((Walk)transport);
-                        iv.setImageResource(R.drawable.bus_blue);
+                        iv.setImageResource(R.drawable.img_bus_1);
                     }else{
-                        iv.setImageResource(R.drawable.bus_red);
+                        iv.setImageResource(R.drawable.img_bus_4);
                     }
                     tv.setText(section.getStart_name());
                     tv.setTextColor(Color.BLACK);

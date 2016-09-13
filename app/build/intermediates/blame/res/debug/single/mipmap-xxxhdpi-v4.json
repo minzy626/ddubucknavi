@@ -1,23 +1,7 @@
 [
     {
-        "merged": "C:\\Users\\user\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\user\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\sec-pc\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\sec-pc\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\flaticon.png",
-        "source": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\flaticon.png"
-    },
-    {
-        "merged": "C:\\Users\\user\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\flaticon.png",
-        "source": "C:\\Users\\user\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxxhdpi\\flaticon.png"
     },
     {
         "merged": "C:\\Users\\sec-pc\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\flaticon.png",

@@ -114,7 +114,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(new LinearLayout.LayoutParams(50,50));
-            imageView.setImageResource(R.drawable.bus_red);
+            imageView.setImageResource(R.drawable.img_bus_4);
 
             layout.addView(imageView);
             layout.addView(textView);

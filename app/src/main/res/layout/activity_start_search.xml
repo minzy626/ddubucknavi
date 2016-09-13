@@ -3,35 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#22d7d7"
     tools:context="com.hurryup.traffic.junga.hahaha.main.StartSearchActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+
         android:id="@+id/linearLayout"
         android:orientation="horizontal">
+
         <AutoCompleteTextView
-            android:layout_width="wrap_content"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="검색어를 입력"
             android:id="@+id/tv_search"
-            android:layout_weight="1"
-            android:ems="10"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" >
+            android:background="@null"
+            android:ems="10" >
             <requestFocus />
         </AutoCompleteTextView>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="검색"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_search"
             android:id="@+id/bnt_Search"
-            android:layout_weight="1"
-            android:layout_gravity="right"
+            android:nestedScrollingEnabled="false"
+            android:onClick="bnt_Search"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
+           ></Button>
     </LinearLayout>
 
     <LinearLayout
@@ -44,8 +49,8 @@
     <Button
         android:id="@+id/bnt_confirm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="출발지로 설정"
+        android:layout_height="75dp"
+        android:background="@drawable/btn_start"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
