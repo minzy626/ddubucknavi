@@ -1,6 +1,7 @@
 package com.hurryup.traffic.junga.hahaha.main;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.content.Intent;
@@ -38,6 +39,7 @@ import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.search.Searcher;
 import com.hurryup.traffic.junga.hahaha.search.Item;
 import com.hurryup.traffic.junga.hahaha.search.OnFinishSearchListener;
+import com.mommoo.library.toolkit.MommooMarshmallowActivity;
 
 public class StartSearchActivity extends AppCompatActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
 
@@ -54,6 +56,7 @@ public class StartSearchActivity extends AppCompatActivity implements MapView.Ma
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_search);
+
         mapView =  new MapView(this);
         mapView.setDaumMapApiKey(api_key);
         LinearLayout mapViewContainer = (LinearLayout) findViewById(R.id.map_view);
@@ -148,7 +151,7 @@ public class StartSearchActivity extends AppCompatActivity implements MapView.Ma
     public void onMapViewInitialized(MapView mapView) {
         Log.i(LOG_TAG, "MapView had loaded. Now, MapView APIs could be called safely");
 
-        mapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(37.537229,127.005515), 2, true);
+        mapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(37.537229, 127.005515), 2, true);
 
         Searcher searcher = new Searcher();
         String query = Search.getText().toString();

@@ -1,5 +1,6 @@
 package com.hurryup.traffic.junga.hahaha.main;
 
+import android.Manifest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +15,11 @@ import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.search.Searcher;
 import com.hurryup.traffic.junga.hahaha.search.Item;
 import com.hurryup.traffic.junga.hahaha.search.OnFinishSearchListener;
+import com.mommoo.library.toolkit.MommooMarshmallowActivity;
 
 import java.util.List;
 
-public class ListSearchActivity extends AppCompatActivity{
+public class ListSearchActivity extends MommooMarshmallowActivity {
     private ListView mListView = null;
     private ListViewAdapter mAdapter = null;
     private EditText et_search_start=null;
@@ -26,6 +28,7 @@ public class ListSearchActivity extends AppCompatActivity{
 
     public void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
+        checkPermission(Manifest.permission.ACCESS_FINE_LOCATION, 1);
         setContentView(R.layout.activity_listsearch);
         final Intent intent = getIntent();
         String start =intent.getExtras().getString("start");
@@ -92,6 +95,20 @@ public class ListSearchActivity extends AppCompatActivity{
         });
     }
 
+    @Override
+    public void permissionGranted(int permissionIndex) {
 
+    }
+
+    @Override
+    public void permissionDenied(boolean isShowDialog, int permissionIndex) {
+        if(isShowDialog){
+            Toast.makeText(ListSearchActivity.this, "앱의 위치 권한부여가 필요합니다.", Toast.LENGTH_SHORT).show();
+            //퍼미션 다이얼로그가 떳는데, 거기서 거절을 누른경우
+        }else{
+            Toast.makeText(ListSearchActivity.this, "앱의 위치 권한부여가 필요합니다.", Toast.LENGTH_SHORT).show();
+            //전에 퍼미션 다이얼로그에서 다시보지 않기를 눌러서 , 퍼미션 다이얼로그가 안뜨고, 거절상태인경우.
+        }
+    }
 
 }

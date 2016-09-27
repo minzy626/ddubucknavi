@@ -80,7 +80,8 @@
             android:id="@+id/et_start"
             android:layout_alignTop="@+id/tv_start"
             android:background="@null"
-            android:ems="10"/>
+            android:ems="10"
+            android:singleLine="true"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -124,7 +125,8 @@
             android:id="@+id/et_end"
             android:layout_alignLeft="@+id/et_start"
             android:background="@null"
-            android:ems="10"/>
+            android:ems="10"
+            android:singleLine="true"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
