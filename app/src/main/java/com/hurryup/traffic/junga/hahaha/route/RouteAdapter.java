@@ -19,8 +19,11 @@ import android.widget.TextView;
 import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.result.ResultActivity;
+import com.hurryup.traffic.junga.hahaha.route.data.Bus;
 import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 import com.hurryup.traffic.junga.hahaha.route.data.Section;
+import com.hurryup.traffic.junga.hahaha.route.data.Train;
+import com.hurryup.traffic.junga.hahaha.route.data.Transport;
 
 import org.w3c.dom.Text;
 
@@ -34,12 +37,11 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
     ArrayList<RouteData> list;
     Context context;
+    GetImageURL getImageURL;
     public RouteAdapter(Context context, ArrayList<RouteData> list){
         this.list = list;
         this.context = context;
-
-
-
+        getImageURL = new GetImageURL(context);
     }
 
     @Override
@@ -65,10 +67,13 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         setView(sectionList,holder);
         int busCount = routeData.getBusStationCount();
         int subwayCount = routeData.getSubwayStationCount();
+
         Log.d("total","Distance"+routeData.getTotalDistance());
         Log.d("total","PayMent"+routeData.getPayment());
         Log.d("total","BusCount "+busCount);
         Log.d("total","SubCount "+subwayCount);
+        Log.d("total","SubCount "+subwayCount);
+
         StringBuilder str = new StringBuilder();
         if(busCount>0){
             str.append(" Bus "+busCount);
@@ -84,6 +89,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             @Override
             public void onClick(View view) {
                 Intent route_intent = new Intent(context, ResultActivity.class);
+                route_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 RouteData routeData = list.get(position);
                 route_intent.putExtra(Code.ROUTE_DATA,routeData);
                 context.startActivity(route_intent);
@@ -101,9 +107,14 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         int sum = 0;
         for(int i=0;i<sectionList.size();i++){
             String startName = sectionList.get(i).getStart_name();
+            Transport transport = sectionList.get(i).getTransport();
+            int imgURL = getImageURL.getImagetURL(transport);
+
             if(startName==null){
                 continue;
             }
+
+
             LinearLayout layout = new LinearLayout(context);
             layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
 
@@ -114,7 +125,8 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(new LinearLayout.LayoutParams(50,50));
-            imageView.setImageResource(R.drawable.img_bus_4);
+
+            imageView.setImageResource(imgURL);
 
             layout.addView(imageView);
             layout.addView(textView);

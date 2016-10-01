@@ -191,15 +191,32 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_route_list"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/com_rounded_corner"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
-    </android.support.v7.widget.RecyclerView>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pb_route"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_route_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/com_rounded_corner"
+            >
+        </android.support.v7.widget.RecyclerView>
+
+
+
+    </RelativeLayout>
+
 
 </LinearLayout>

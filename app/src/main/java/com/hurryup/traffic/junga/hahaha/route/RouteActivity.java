@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +42,7 @@ public class RouteActivity extends AppCompatActivity {
     String start, end, startGpsX, startGpsY, endGpsX, endGpsY;
     GetImageURL getImagetURL;
     LinearLayout ll_firstLine;
+    ProgressBar pb_route;
     public void init(){
         System.out.println("RouteActivity");
         Intent intent = getIntent();
@@ -60,7 +63,7 @@ public class RouteActivity extends AppCompatActivity {
         tv_route_time = (TextView)findViewById(R.id.tv_route_time);
         tv_route_payment = (TextView)findViewById(R.id.tv_route_payment);
 
-
+        pb_route = (ProgressBar)findViewById(R.id.pb_route);
         ll_firstLine = (LinearLayout)findViewById(R.id.ll_firstline);
 
     }
@@ -133,6 +136,7 @@ public class RouteActivity extends AppCompatActivity {
                 }
                 result.remove(0);
                 rv_route_result.setAdapter(new RouteAdapter(getApplicationContext(), result));
+                pb_route.setVisibility(View.INVISIBLE);
             }
         };
 
