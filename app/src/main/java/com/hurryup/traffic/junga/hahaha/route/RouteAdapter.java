@@ -27,6 +27,7 @@ import com.hurryup.traffic.junga.hahaha.route.data.Transport;
 
 import org.w3c.dom.Text;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
@@ -82,8 +83,11 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             str.append(" Sub "+subwayCount);
         }
         holder.tv_route_start.setText(str.toString());
-        holder.tv_route_end.setText(routeData.getTotalDistance()/1000.0+" Km");
-        holder.tv_route_time.setText(routeData.getTotalTime());
+        NumberFormat nt = NumberFormat.getInstance();
+        nt.setMaximumFractionDigits(2);
+        double distance = routeData.getTotalDistance()/1000.0;
+
+        holder.tv_route_end.setText(nt.format(distance)+" Km");
 
         holder.route_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,6 +177,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         public TextView tv_route_start;
         public TextView tv_route_end;
         public TextView tv_route_time;
+        public TextView tv_line_time;
         public ViewGroup route_btn;
         public LinearLayout ll_route_line;
         public CardView cardView;
@@ -184,6 +189,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             tv_route_end = (TextView)itemView.findViewById(R.id.tv_line2_3);
             tv_route_time = (TextView)itemView.findViewById(R.id.tv_line_savetime);
             route_btn = (ViewGroup)itemView.findViewById(R.id.layout_route_recyclerview);
+            tv_line_time = (TextView)itemView.findViewById(R.id.tv_line_time);
         }
 
 
