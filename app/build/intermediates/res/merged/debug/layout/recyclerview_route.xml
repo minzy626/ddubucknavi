@@ -32,19 +32,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/tv_line2_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
 
-                    android:textSize="20dp"
-                    />
                 <TextView
                     android:textSize="20dp"
                     android:id="@+id/tv_line2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/tv_line2_1"
                     android:text="ddd"
                     />
                 <TextView
@@ -94,7 +87,7 @@
                     android:id="@+id/slice2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/tv_time"
+                    android:layout_toRightOf="@id/tv_line_time"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     android:textSize="20dp"

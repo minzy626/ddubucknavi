@@ -118,6 +118,11 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             LinearLayout layout = new LinearLayout(context);
             layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
 
+            ImageView arrow = new ImageView(context);
+            arrow.setLayoutParams(new LinearLayout.LayoutParams(50,50));
+            arrow.setImageResource(R.drawable.arrow2);
+            layout.addView(arrow);
+
             TextView textView = new TextView(context);
             textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
             textView.setText(startName);
@@ -141,6 +146,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             }
             int count = holder.ll_route_line.getChildCount();
             if(count>0){
+
                 LinearLayout childView= (LinearLayout)holder.ll_route_line.getChildAt(count-1);
                 childView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
                 if(layout.getMeasuredWidth()+childView.getMeasuredWidth()<width-100){

@@ -2229,12 +2229,11 @@ containing a value of this type.
         public static final int totaltime=0x7f0b0072;
         public static final int tv_Endname=0x7f0b00a2;
         public static final int tv_Startname=0x7f0b00a0;
-        public static final int tv_line2_1=0x7f0b00a7;
         public static final int tv_line2_2=0x7f0b007a;
         public static final int tv_line2_3=0x7f0b007b;
-        public static final int tv_line_payment=0x7f0b00aa;
-        public static final int tv_line_savetime=0x7f0b00ab;
-        public static final int tv_line_time=0x7f0b00a9;
+        public static final int tv_line_payment=0x7f0b00a9;
+        public static final int tv_line_savetime=0x7f0b00aa;
+        public static final int tv_line_time=0x7f0b00a8;
         public static final int tv_map_time=0x7f0b006e;
         public static final int tv_result_Endname=0x7f0b0071;
         public static final int tv_result_Startname=0x7f0b006f;
@@ -2245,7 +2244,7 @@ containing a value of this type.
         public static final int tv_route_startname=0x7f0b0075;
         public static final int tv_route_time=0x7f0b007d;
         public static final int tv_search=0x7f0b0056;
-        public static final int tv_slice=0x7f0b00a8;
+        public static final int tv_slice=0x7f0b00a7;
         public static final int tv_start=0x7f0b0069;
         public static final int tv_time=0x7f0b00a1;
         public static final int up=0x7f0b0009;

@@ -174,9 +174,11 @@ public class RouteThreadData extends Thread {
                 result_rd.setTotalDistance((String) result_info.get("totalDistance"));
                 result_rd.setTotalStationCount((String) result_info.get("totalStationCount"));
                 result_rd.setTotalTimeInfo((String) result_info.get("totalTimeInfo"));
-                result_rd.setBusStationCount((String)jInfo.get(Code.BUS_STATION_COUNT));
-                result_rd.setSubwayStationCount((String)jInfo.get(Code.SUBWAY_STATION_COUNT));
-                result_rd.setWalkTotaldis((String)jInfo.get(Code.WALK_DIS));
+                result_rd.setBusStationCount((String)result_info.get(Code.BUS_STATION_COUNT));
+                result_rd.setSubwayStationCount((String)result_info.get(Code.SUBWAY_STATION_COUNT));
+                Log.d("routeData","Sub"+result_rd.getSubwayStationCount()+"@@@@@@@@@@@@@");
+                Log.d("routeData","Bus"+result_rd.getBusStationCount()+"@@@@@@@@@@@@@@@@@@@@");
+                result_rd.setWalkTotaldis((String)result_info.get(Code.WALK_DIS));
                 ArrayList<Section> result_s = new ArrayList<>();
 
                 for (int k = 0; k < result_subPath.size(); k++) {
@@ -276,6 +278,8 @@ public class RouteThreadData extends Thread {
 //            System.out.println("totalStationCount : " + rd.getTotalStationCount());
 
             for (int i=0 ; i<routeDataList.size() ; i++) {
+                Log.d("routeData","BusCount"+routeDataList.get(i).getBusStationCount());
+                Log.d("routeData","SubCount"+routeDataList.get(i).getSubwayStationCount());
                 System.out.println(routeDataList.get(i).getStart());
                 System.out.println(routeDataList.get(i).getEnd());
                 System.out.println(routeDataList.get(i).getPayment());

@@ -15,13 +15,17 @@ public class RouteData implements Serializable {
     private String totalTimeInfo;
     private String payment;
     private String totalStationCount;
+    private String totalDistance;
+    private String busStationCount;
+    private String subwayStationCount;
+    private String walkTotaldis;
 
     public int getBusStationCount() {
         if(busStationCount==null){
             return 0;
         }
-            int result = Integer.parseInt(busStationCount);
-            return result;
+        int result = Integer.parseInt(busStationCount);
+        return result;
 
 
     }
@@ -31,7 +35,7 @@ public class RouteData implements Serializable {
     }
 
     public int getSubwayStationCount() {
-        if(busStationCount==null){
+        if(subwayStationCount==null){
             return 0;
         }
         int result = Integer.parseInt(subwayStationCount);
@@ -50,10 +54,7 @@ public class RouteData implements Serializable {
         this.walkTotaldis = walkTotaldis;
     }
 
-    private String totalDistance;
-    private String busStationCount;
-    private String subwayStationCount;
-    private String walkTotaldis;
+
 
     public String getPayment() {
         return payment;

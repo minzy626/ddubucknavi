@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/layout/activity_listsearch_end.xml",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/layout/activity_listsearch_end.xml"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/layout/activity_listsearch_end.xml",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/layout/activity_listsearch_end.xml"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
