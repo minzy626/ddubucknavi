@@ -2,6 +2,7 @@ package com.hurryup.traffic.junga.hahaha.route;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
@@ -131,7 +132,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
             textView.setText(startName);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,20);
-
+            textView.setTextColor(Color.BLACK);
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(new LinearLayout.LayoutParams(50,50));
 

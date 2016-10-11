@@ -116,12 +116,12 @@
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/custom_callout_balloon_left_side_button.png"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/ic_launcher.png"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/img_train_2.png",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/img_train_2.png"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/ic_launcher.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/search.png",
