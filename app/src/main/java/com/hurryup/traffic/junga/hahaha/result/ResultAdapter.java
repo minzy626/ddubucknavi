@@ -56,6 +56,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             int resource = getImagetURL.getImagetURL(bus);
             holder.iv_Trans.setImageResource(R.drawable.img_bus_1);
             holder.tv_Trans.setText(bus.getBus_Number()+"번");
+            holder.tv_Start.setText(section.getStart_name()+" 정류소");
+            holder.tv_End.setText(section.getEnd_name()+" 정류소");
             //holder.tv_Trans.setText(bus.getBus_Number());
             //holder.iv_Trans.setImageResource(getImageURL(bus));
         }else if(trans instanceof Train){
@@ -64,6 +66,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             int resource = getImagetURL.getImagetURL(train);
             holder.iv_Trans.setImageResource(R.drawable.img_train_1);
             holder.tv_Trans.setText(train.getLine_number()+"호선");
+            holder.tv_Start.setText(section.getStart_name()+"역");
+            holder.tv_End.setText(section.getEnd_name()+"역");
             // holder.tv_Trans.setText(train.getLine_Number());
             // holder.iv_Trans.setImageResource(getImageURL(train));
         }else{
@@ -75,9 +79,9 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
 
         //1지하철 2버스 3걷기
 
-        if(section.getStart_name() != null || section.getStart_name() == "") {
-            holder.tv_Start.setText(section.getStart_name());
-            holder.tv_End.setText(section.getEnd_name());
+        if(section.getStart_name() != null && section.getStart_name() != "") {
+            //holder.tv_Start.setText(section.getStart_name());
+            //holder.tv_End.setText(section.getEnd_name());
             holder.tv_Time.setText("약 "+section.getTime()+"분");
         } else {
             holder.tv_Start.setText("걸어보아요");
