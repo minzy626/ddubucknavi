@@ -89,7 +89,6 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         double distance = routeData.getTotalDistance()/1000.0;
 
         holder.tv_route_end.setText(nt.format(distance)+" Km");
-
         holder.route_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,10 +99,6 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
                 context.startActivity(route_intent);
             }
         });
-
-
-
-
     }
     public void setView(ArrayList<Section> sectionList, RouteAdapter.MyViewHolder holder){
         Log.d("setView","setView");
@@ -135,7 +130,6 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             textView.setTextColor(Color.BLACK);
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(new LinearLayout.LayoutParams(50,50));
-
             imageView.setImageResource(imgURL);
 
             layout.addView(imageView);
@@ -162,12 +156,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             }else{
                 holder.ll_route_line.addView(layout);
             }
-
-
         }
-
-
-
     }
     @Override
     public int getItemCount() {

@@ -1,6 +1,5 @@
 package com.hurryup.traffic.junga.hahaha.route;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
@@ -9,14 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hurryup.traffic.junga.hahaha.route.data.Bus;
 import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
@@ -27,8 +23,8 @@ import com.hurryup.traffic.junga.hahaha.route.data.Train;
 import com.hurryup.traffic.junga.hahaha.route.data.Transport;
 import com.hurryup.traffic.junga.hahaha.route.data.Walk;
 
-import org.w3c.dom.Text;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class RouteActivity extends AppCompatActivity {
@@ -43,6 +39,7 @@ public class RouteActivity extends AppCompatActivity {
     GetImageURL getImagetURL;
     LinearLayout ll_firstLine;
     ProgressBar pb_route;
+    TextView tv_route_count;
     public void init(){
         System.out.println("RouteActivity");
         Intent intent = getIntent();
@@ -62,7 +59,7 @@ public class RouteActivity extends AppCompatActivity {
         tv_route_distance = (TextView)findViewById(R.id.tv_route_distance);
         tv_route_time = (TextView)findViewById(R.id.tv_route_time);
         tv_route_payment = (TextView)findViewById(R.id.tv_route_payment);
-
+        tv_route_count = (TextView)findViewById(R.id.tv_route_count);
         pb_route = (ProgressBar)findViewById(R.id.pb_route);
         ll_firstLine = (LinearLayout)findViewById(R.id.ll_firstline);
 
@@ -94,11 +91,20 @@ public class RouteActivity extends AppCompatActivity {
                 //first line
                 RouteData routeData = result.get(0);
                 ArrayList<Section> sList = routeData.getSectionList();
-
+                NumberFormat nt = NumberFormat.getInstance();
+                nt.setMaximumFractionDigits(2);
+                double distance = routeData.getTotalDistance()/1000.0;
                 //init
-                tv_route_distance.setText(routeData.getTotalDistance()/1000+"km");
-                tv_route_time.setText("약"+routeData.getTotalTime()+"분");
-                tv_route_payment.setText(routeData.getPayment()+"원");
+                tv_route_distance.setText(nt.format(distance)+" Km");
+                tv_route_time.setText("약 "+routeData.getTotalTime()+"분");
+                tv_route_payment.setText(routeData.getPayment()+" 원");
+                String bs_Count="";
+                int subCount = routeData.getSubwayStationCount();
+                if(subCount>0)bs_Count=bs_Count+"Sub "+subCount;
+                int busCount = routeData.getBusStationCount();
+                if(busCount>0)bs_Count=bs_Count+"Bus "+busCount;
+                tv_route_count.setText(bs_Count);
+
                 for(int i =0; i<sList.size();i++){
                     Section section = sList.get(i);
 
@@ -108,7 +114,7 @@ public class RouteActivity extends AppCompatActivity {
                     tv.setLayoutParams(lp);
 
                     ImageView iv = new ImageView(getApplicationContext());
-                    LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(20,20);
+                    LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(50,50);
                     iv.setLayoutParams(lp2);
 
                     Transport transport = section.getTransport();
