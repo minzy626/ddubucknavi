@@ -22,7 +22,7 @@ public class GetImageURL {
         }else if(transport instanceof Train){
             url = "img_train_"+((Train)transport).getLine_number();
         }else{
-            url = "img_walk_";
+            url = "image_walk";
         }
         int imageResource
                 = context.getResources().getIdentifier(url, "drawable", context.getPackageName());
