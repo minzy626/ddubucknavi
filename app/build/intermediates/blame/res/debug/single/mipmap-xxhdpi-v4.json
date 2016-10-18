@@ -1,10 +1,122 @@
 [
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/flaticon.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/mipmap-xxhdpi/flaticon.png"
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\reverse.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\reverse.png"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_launcher.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_6.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_6.png"
+    },
+    {
+        "merged": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\flaticon.png",
+        "source": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\flaticon.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\walk.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\walk.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_9.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_2.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_2.png"
+    },
+    {
+        "merged": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\home\\lim\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\arrow2.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\arrow2.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_bus_1.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_bus_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_5.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_5.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\flaticon.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\flaticon.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_101.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_101.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\metro_shinbundang.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\metro_shinbundang.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_result.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_result.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_104.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_104.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\arrow.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\bus_red.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\bus_red.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_7.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_7.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_1.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_destination.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_destination.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_4.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_4.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_100.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_100.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_start.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_start.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\bus_green.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\bus_green.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\opening_bus.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\opening_bus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_3.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_3.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\search.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\search.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\img_train_109.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\img_train_109.png"
+    },
+    {
+        "merged": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\bus_yellow.png",
+        "source": "C:\\Users\\Yeom\\AndroidStudioProjects\\ddubucknavi\\app\\src\\main\\res\\mipmap-xxhdpi\\bus_yellow.png"
     }
 ]

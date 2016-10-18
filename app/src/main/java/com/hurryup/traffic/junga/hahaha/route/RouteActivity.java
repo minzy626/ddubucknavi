@@ -79,9 +79,6 @@ public class RouteActivity extends AppCompatActivity {
         end = end.replaceAll(" ", "+");
 
 
-
-
-
         final Handler handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {

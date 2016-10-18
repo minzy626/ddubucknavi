@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/custom_map_present_direction.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/custom_map_present_direction.png"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/custom_poi_marker_selected.png",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/custom_poi_marker_selected.png"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/custom_map_present_direction.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/custom_map_present_direction.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/map_pin_red.png",
@@ -28,12 +28,12 @@
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_seekbar_track_material.xml"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/flaticon.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/flaticon.png"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/flaticon.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/flaticon.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/map_pin_yellow.png",
@@ -116,12 +116,12 @@
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/custom_callout_balloon_left_side_button.png"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/ic_launcher.png"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/img_train_2.png",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/img_train_2.png"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/ic_launcher.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/search.png",
@@ -236,16 +236,16 @@
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/img_train_9.png"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/img_bus_4.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/img_bus_4.png"
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/arrow2.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/arrow2.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/img_train_3.png",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/img_train_3.png"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/arrow2.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/arrow2.png"
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/img_bus_4.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/drawable/img_bus_4.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
