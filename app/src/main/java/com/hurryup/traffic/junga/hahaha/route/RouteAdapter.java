@@ -113,6 +113,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         for(int i=0;i<sectionList.size();i++){
             String startName = sectionList.get(i).getStart_name();
             Transport transport = sectionList.get(i).getTransport();
+
             int imgURL = getImageURL.getImagetURL(transport);
 
             if(startName==null){
