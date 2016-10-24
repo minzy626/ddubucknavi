@@ -18,7 +18,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+
+            >
             <LinearLayout
                 android:id="@+id/ll_routeline"
 
@@ -34,7 +36,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:id="@+id/tv_line2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -47,7 +49,7 @@
                     android:layout_toRightOf="@id/tv_line2_2"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="|"
                     />
                 <TextView
@@ -55,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/tv_slice"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="3555"
                     />
 
@@ -74,12 +76,14 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 >
                 <TextView
                     android:id="@+id/tv_line_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
 
                     android:text="34"
                     />
@@ -90,7 +94,7 @@
                     android:layout_toRightOf="@id/tv_line_time"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="|"
                     />
                 <TextView
@@ -98,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/slice2"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="3555"
                     />
                 <TextView
@@ -106,7 +110,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="34"
                     />
 

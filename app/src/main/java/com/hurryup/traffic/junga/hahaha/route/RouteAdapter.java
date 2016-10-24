@@ -25,6 +25,7 @@ import com.hurryup.traffic.junga.hahaha.route.data.RouteData;
 import com.hurryup.traffic.junga.hahaha.route.data.Section;
 import com.hurryup.traffic.junga.hahaha.route.data.Train;
 import com.hurryup.traffic.junga.hahaha.route.data.Transport;
+import com.hurryup.traffic.junga.hahaha.route.data.Walk;
 
 import org.w3c.dom.Text;
 
@@ -88,8 +89,15 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         nt.setMaximumFractionDigits(2);
         double distance = routeData.getTotalDistance()/1000.0;
 
+        //distance
         holder.tv_route_end.setText(nt.format(distance)+" Km");
 
+        //time
+        holder.tv_line_time.setText("약 "+routeData.getTotalTime()+"분");
+        //pay
+        holder.tv_line_payment.setText(routeData.getPayment()+" 원");
+
+        //button
         holder.route_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,8 +123,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             Transport transport = sectionList.get(i).getTransport();
 
             int imgURL = getImageURL.getImagetURL(transport);
-
-            if(startName==null){
+            if(transport instanceof Walk){
                 continue;
             }
 
@@ -180,6 +187,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         public TextView tv_route_end;
         public TextView tv_route_time;
         public TextView tv_line_time;
+        TextView tv_line_payment;
         public ViewGroup route_btn;
         public LinearLayout ll_route_line;
         public CardView cardView;
@@ -192,6 +200,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             tv_route_time = (TextView)itemView.findViewById(R.id.tv_line_savetime);
             route_btn = (ViewGroup)itemView.findViewById(R.id.layout_route_recyclerview);
             tv_line_time = (TextView)itemView.findViewById(R.id.tv_line_time);
+            tv_line_payment = (TextView)itemView.findViewById(R.id.tv_line_payment);
         }
 
 

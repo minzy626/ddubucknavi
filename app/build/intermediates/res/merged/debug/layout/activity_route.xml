@@ -68,8 +68,13 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         />
-
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb_route_first"
+        />
     <LinearLayout
+        android:id="@+id/ll_first"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -80,9 +85,9 @@
         >
         <LinearLayout
             android:id="@+id/ll_firstline"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             >
         </LinearLayout>
 
@@ -95,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="버스정류장"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 />
 
             <TextView
@@ -103,9 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_route_count"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15dp"
                 android:text="|"
                 />
             <TextView
@@ -113,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_line2_3"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:text="3555"
                 />
 
@@ -135,16 +140,16 @@
                 android:id="@+id/tv_route_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 />
             <TextView
                 android:id="@+id/slice2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_route_time"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15dp"
                 android:text="|"
                 />
             <TextView
@@ -152,14 +157,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/slice2"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:text="3555"
                 />
             <TextView
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:text="34"
                 />
 
