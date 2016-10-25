@@ -92,12 +92,12 @@
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/mipmap-xxhdpi/btn_destination.png"
     },
     {
-        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/img_train_104.png",
-        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/mipmap-xxhdpi/img_train_104.png"
-    },
-    {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/img_train_100.png",
         "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/mipmap-xxhdpi/img_train_100.png"
+    },
+    {
+        "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/img_train_104.png",
+        "source": "/home/lim/AndroidStudioProjects/ddubucknavi/app/src/main/res/mipmap-xxhdpi/img_train_104.png"
     },
     {
         "merged": "/home/lim/AndroidStudioProjects/ddubucknavi/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/img_train_1.png",

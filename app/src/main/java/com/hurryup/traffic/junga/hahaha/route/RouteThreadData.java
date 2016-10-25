@@ -51,6 +51,7 @@ public class RouteThreadData extends Thread {
         try {
             String startStNm = java.net.URLEncoder.encode(start, "UTF8");
             String endStNm = java.net.URLEncoder.encode(end, "UTF8");
+
             System.out.println("http://52.78.109.14/api/v1/path/getpath?startStNm="
                     + startStNm + "&startX=" + startGpsX + "&startY=" + startGpsY + "&endStNm=" + endStNm + "&endX=" + endGpsX + "&endY=" + endGpsY);
             boolean status = false;
@@ -58,11 +59,13 @@ public class RouteThreadData extends Thread {
             Document doc = null;
             while (status == false && count < 5 ) {
                 try {
+
                     doc = Jsoup.connect("http://52.78.109.14/api/v1/path/getpath?startStNm="
                             + startStNm + "&startX=" + startGpsX + "&startY=" + startGpsY + "&endStNm=" + endStNm + "&endX=" + endGpsX + "&endY=" + endGpsY)
-                            .ignoreContentType(true).get(); // 웹에서 내용을 가져온다.
+                            .ignoreContentType(true).timeout(30000).get(); // 웹에서 내용을 가져온다.
                     status = true;
                 } catch(HttpStatusException e) {
+                    Log.d("server","111");
                     e.printStackTrace();
                     count++;
                     try {
