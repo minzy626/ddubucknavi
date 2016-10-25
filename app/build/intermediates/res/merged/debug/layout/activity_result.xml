@@ -11,46 +11,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="STARTNAME"
-        android:textSize="20dp"
+        android:textSize="23dp"
         android:id="@+id/tv_result_Startname"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="5dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/iv_result_arrow"
+        android:layout_alignRight="@+id/tv_result_Endname"
+        android:layout_alignEnd="@+id/tv_result_Endname" />
 
     <ImageView
         android:id="@+id/iv_result_arrow"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/image_route_arrow1"
-        android:layout_alignTop="@+id/tv_result_Endname"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_alignTop="@+id/tv_result_Startname"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ENDNAME"
-        android:textSize="20dp"
+        android:textSize="23dp"
         android:id="@+id/tv_result_Endname"
-        android:layout_alignTop="@+id/totaltime"
-        android:layout_toLeftOf="@+id/totaltime"
-        android:layout_toStartOf="@+id/totaltime" />
+        android:textColor="#ffffff"
+        android:layout_above="@+id/recyclerview_result"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/totaltime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="5dp"
         android:textSize="20dp"
         android:text="약 48분"
-        android:textColor="#ff0000"
+        android:textColor="#ffffff"
         android:gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_result"
@@ -58,7 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
         android:layout_below="@+id/iv_result_arrow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

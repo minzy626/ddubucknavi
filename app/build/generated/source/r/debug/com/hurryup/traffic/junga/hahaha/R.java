@@ -2189,7 +2189,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f0b0006;
         public static final int progress_horizontal=0x7f0b0007;
         public static final int radio=0x7f0b003f;
-        public static final int recyclerview_result=0x7f0b0073;
+        public static final int recyclerview_result=0x7f0b0072;
         public static final int rootView=0x7f0b0087;
         public static final int rv_route_list=0x7f0b0081;
         public static final int screen=0x7f0b0016;
@@ -2232,7 +2232,7 @@ containing a value of this type.
         public static final int title_template=0x7f0b0033;
         public static final int top=0x7f0b0024;
         public static final int topPanel=0x7f0b0032;
-        public static final int totaltime=0x7f0b0072;
+        public static final int totaltime=0x7f0b0073;
         public static final int tv_Endname=0x7f0b00a3;
         public static final int tv_Startname=0x7f0b00a0;
         public static final int tv_Trans=0x7f0b00a1;

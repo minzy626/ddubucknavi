@@ -42,7 +42,8 @@ public class RouteActivity extends BaseActivity {
     TextView tv_route_distance;
     TextView tv_route_time;
     TextView tv_route_payment;
-    String start, end, startGpsX, startGpsY, endGpsX, endGpsY;
+    public static String start, end;
+    String startGpsX, startGpsY, endGpsX, endGpsY;
     GetImageURL getImagetURL;
     LinearLayout ll_firstLine;
     LinearLayout ll_first;

@@ -79,10 +79,10 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
         StringBuilder str = new StringBuilder();
         if(busCount>0){
-            str.append(" Bus "+busCount);
+            str.append(" 버스정류장"+busCount);
         }
         if(subwayCount>0){
-            str.append(" Sub "+subwayCount);
+            str.append(" 지하철 역"+subwayCount);
         }
         holder.tv_route_start.setText(str.toString());
         NumberFormat nt = NumberFormat.getInstance();
@@ -90,7 +90,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         double distance = routeData.getTotalDistance()/1000.0;
 
         //distance
-        holder.tv_route_end.setText(nt.format(distance)+" Km");
+        holder.tv_route_end.setText("약 "+nt.format(distance)+"Km");
 
         //time
         holder.tv_line_time.setText("약 "+routeData.getTotalTime()+"분");
