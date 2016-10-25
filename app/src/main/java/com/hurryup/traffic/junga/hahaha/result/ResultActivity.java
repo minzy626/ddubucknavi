@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.hurryup.traffic.junga.hahaha.main.BaseActivity;
 import com.hurryup.traffic.junga.hahaha.map.MapActivity;
 import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.model.Code;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 /**
  * Created by JUNGA on 2016-08-19.
  */
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends BaseActivity {
 
     private RecyclerView recyclerView_result;
     private Button btn_result_map;

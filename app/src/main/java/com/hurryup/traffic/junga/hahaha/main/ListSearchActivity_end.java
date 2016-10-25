@@ -22,7 +22,7 @@ import com.mommoo.library.toolkit.MommooMarshmallowActivity;
 
 import java.util.List;
 
-public class ListSearchActivity_end extends MommooMarshmallowActivity {
+public class ListSearchActivity_end extends BaseActivity {
     private ListView mListView = null;
     private ListViewAdapter mAdapter = null;
     private EditText et_search_end=null;

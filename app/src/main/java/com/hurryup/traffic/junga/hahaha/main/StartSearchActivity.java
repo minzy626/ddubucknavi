@@ -41,7 +41,7 @@ import com.hurryup.traffic.junga.hahaha.search.Item;
 import com.hurryup.traffic.junga.hahaha.search.OnFinishSearchListener;
 import com.mommoo.library.toolkit.MommooMarshmallowActivity;
 
-public class StartSearchActivity extends AppCompatActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
+public class StartSearchActivity extends BaseActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
 
     private static final String LOG_TAG = "SearchDemoActivity";
 

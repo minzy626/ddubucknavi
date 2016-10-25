@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.hurryup.traffic.junga.hahaha.main.BaseActivity;
 import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.result.ResultActivity;
 import com.hurryup.traffic.junga.hahaha.route.data.Bus;
@@ -33,7 +34,7 @@ import com.hurryup.traffic.junga.hahaha.route.data.Walk;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
-public class RouteActivity extends AppCompatActivity {
+public class RouteActivity extends BaseActivity {
     Context context;
     RecyclerView rv_route_result;
     TextView tv_route_startname;

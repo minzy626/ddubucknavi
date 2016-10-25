@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.hurryup.traffic.junga.hahaha.R;
 import com.hurryup.traffic.junga.hahaha.route.RouteActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private EditText et_start ;
     private EditText et_end ;
