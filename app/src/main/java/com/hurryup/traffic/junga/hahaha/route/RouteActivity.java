@@ -112,14 +112,14 @@ public class RouteActivity extends BaseActivity {
                 nt.setMaximumFractionDigits(2);
                 double distance = routeData.getTotalDistance()/1000.0;
                 //init
-                tv_route_distance.setText(nt.format(distance)+" Km");
+                tv_route_distance.setText("약 "+nt.format(distance)+" Km");
                 tv_route_time.setText("약 "+routeData.getTotalTime()+"분");
                 tv_route_payment.setText(routeData.getPayment()+" 원");
                 String bs_Count="";
                 int subCount = routeData.getSubwayStationCount();
-                if(subCount>0)bs_Count=bs_Count+"Sub "+subCount;
+                if(subCount>0)bs_Count=bs_Count+"지하철역 "+subCount;
                 int busCount = routeData.getBusStationCount();
-                if(busCount>0)bs_Count=bs_Count+"Bus "+busCount;
+                if(busCount>0)bs_Count=bs_Count+"버스정류장 "+busCount;
                 tv_route_count.setText(bs_Count);
                 int sum = 0;
                 for(int i =0; i<sList.size();i++){
