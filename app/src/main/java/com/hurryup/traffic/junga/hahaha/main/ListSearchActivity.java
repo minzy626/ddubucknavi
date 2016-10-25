@@ -79,8 +79,10 @@ public class ListSearchActivity extends BaseActivity {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                mListView.setAdapter(mAdapter);
-                Log.d("route","%%%%%%%%%%%%");
+                if(msg.what==1){
+                    Log.d("route","%%%%%%%%%%%%1111111111111111");
+                    mListView.setAdapter(mAdapter);
+                }
             }
         };
         search_Function(dest);
@@ -89,7 +91,6 @@ public class ListSearchActivity extends BaseActivity {
             public void onClick(View v){
                 String dest = et_search_start.getText().toString();
                 search_Function(dest);
-
                 Toast.makeText(ListSearchActivity.this, "RRRRR", Toast.LENGTH_SHORT).show();
             }
         });
@@ -100,8 +101,8 @@ public class ListSearchActivity extends BaseActivity {
                 ListData mData = mAdapter.mListData.get(position);
                 Intent intent = new Intent(getApplication(),StartSearchActivity.class);
                 intent.putExtra("start",mData.mTitle.toString());
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
     }

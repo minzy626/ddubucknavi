@@ -18,7 +18,21 @@ public class GetImageURL {
     public int getImagetURL(Transport transport) {
         String url="";
         if (transport instanceof Bus) {
-            url = "img_bus_" + ((Bus) transport).getLine_number();
+            switch (((Bus) transport).getLine_number()) {
+                case "12":
+                case "3":
+                    url = "img_bus_" + "green";
+                    break;
+                case "5":
+                    url = "img_bus_" + "";
+                    break;
+                case "11":
+                    break;
+                case "13":
+                    break;
+                case "14":
+                    break;
+            }
         }else if(transport instanceof Train){
             url = "img_train_"+((Train)transport).getLine_number();
         }else{

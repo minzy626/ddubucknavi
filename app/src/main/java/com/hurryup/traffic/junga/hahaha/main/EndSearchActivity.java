@@ -39,7 +39,7 @@ import com.hurryup.traffic.junga.hahaha.search.Item;
 import com.hurryup.traffic.junga.hahaha.search.OnFinishSearchListener;
 
 
-public class EndSearchActivity  extends AppCompatActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
+public class EndSearchActivity  extends BaseActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
     private static final String LOG_TAG = "SearchDemoActivity";
 
     String api_key ="db03b9259cfb1b5d8942e4a7d0374139";
@@ -49,7 +49,6 @@ public class EndSearchActivity  extends AppCompatActivity implements MapView.Map
     private Button bnt_confirm;
     private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
     public static String arrival = "";
-
 
 
     @Override
@@ -71,7 +70,7 @@ public class EndSearchActivity  extends AppCompatActivity implements MapView.Map
         Search.setText(end);
 
         bnt_search =(Button)findViewById(R.id.bnt_Search);
-        bnt_search.setOnClickListener(new View.OnClickListener(){
+        bnt_search.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
 
                 String query = Search.getText().toString();
@@ -102,13 +101,11 @@ public class EndSearchActivity  extends AppCompatActivity implements MapView.Map
             }
         });
         bnt_confirm=(Button)findViewById(R.id.bnt_confirm);
-        bnt_confirm.setOnClickListener(new View.OnClickListener(){
+        bnt_confirm.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
                 arrival =Search.getText().toString();
-                Intent intent2=new Intent(getApplicationContext(),MainActivity.class);
-                intent2.putExtra("end",arrival);
-                setResult(RESULT_OK,intent2);
-                startActivityForResult(intent2,0);
+                MainActivity.end = arrival;
+                finish();
 
             }
         });

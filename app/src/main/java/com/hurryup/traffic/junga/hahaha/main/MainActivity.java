@@ -19,8 +19,8 @@ public class MainActivity extends BaseActivity {
     private EditText et_start ;
     private EditText et_end ;
 
-    private String start;
-    private String end;
+    static String start;
+    static String end;
     private String startGpsX, startGpsY;
     private String endGpsX, endGpsY;
 
@@ -29,7 +29,6 @@ public class MainActivity extends BaseActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("123","MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMAIN");
         et_start = (EditText)findViewById(R.id.et_start);
         et_end =(EditText)findViewById(R.id.et_end);
         Button bnt_startSearch=(Button)findViewById(R.id.bnt_startSearch);
@@ -130,7 +129,7 @@ public class MainActivity extends BaseActivity {
 //                intent.putExtra("end",end);
 //                startActivity(intent);
 
-                start = "선유도역 9호선";
+//                start = "선유도역 9호선";
                 LocationThreadData td1 = new LocationThreadData(start, handler, 0);
                 td1.setDaemon(true);
                 td1.start();
@@ -140,7 +139,7 @@ public class MainActivity extends BaseActivity {
                     e.printStackTrace();
                 }
 
-                end = "혜화역 4호선";
+//                end = "혜화역 4호선";
                 LocationThreadData td2 = new LocationThreadData(end, handler, 1);
                 td2.setDaemon(true);
                 td2.start();
@@ -178,8 +177,8 @@ public class MainActivity extends BaseActivity {
         String end=intent.getExtras().getString("end");*/
         et_start = (EditText)findViewById(R.id.et_start);
         et_end =(EditText)findViewById(R.id.et_end);
-        et_start.setText(com.hurryup.traffic.junga.hahaha.main.StartSearchActivity.departure);
-        et_end.setText(com.hurryup.traffic.junga.hahaha.main.EndSearchActivity.arrival);
+        et_start.setText(StartSearchActivity.departure);
+        et_end.setText(EndSearchActivity.arrival);
     }
     private void showToast(final String text) {
         runOnUiThread(new Runnable() {

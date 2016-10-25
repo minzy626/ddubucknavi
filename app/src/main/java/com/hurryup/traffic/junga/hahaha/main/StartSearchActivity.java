@@ -71,7 +71,7 @@ public class StartSearchActivity extends BaseActivity implements MapView.MapView
         Search.setText(start);//이전페이지에서 검색어값에 받아온것을 검색어창에 뜨ㅣ움
 
         bnt_search =(Button)findViewById(R.id.bnt_Search);
-        bnt_search.setOnClickListener(new View.OnClickListener(){
+        bnt_search.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
                 String query = Search.getText().toString();
                 if (query == null || query.length() == 0) {
@@ -102,13 +102,11 @@ public class StartSearchActivity extends BaseActivity implements MapView.MapView
             }
         });
         bnt_confirm=(Button)findViewById(R.id.bnt_confirm);
-        bnt_confirm.setOnClickListener(new View.OnClickListener(){
+        bnt_confirm.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
                 departure =Search.getText().toString();
-                Intent intent2=new Intent(StartSearchActivity.this,MainActivity.class);
-                intent2.putExtra("startplace",departure);
-                setResult(RESULT_OK,intent2);
-                startActivityForResult(intent2,0);
+                MainActivity.start = departure;
+                finish();
             }
         });
 
