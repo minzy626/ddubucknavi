@@ -18,7 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.hurryup.traffic.junga.hahaha.main.BaseActivity;
 import com.hurryup.traffic.junga.hahaha.model.Code;
 import com.hurryup.traffic.junga.hahaha.result.ResultActivity;
 import com.hurryup.traffic.junga.hahaha.route.data.Bus;
@@ -34,7 +33,7 @@ import com.hurryup.traffic.junga.hahaha.route.data.Walk;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
-public class RouteActivity extends BaseActivity {
+public class RouteActivity extends AppCompatActivity {
     Context context;
     RecyclerView rv_route_result;
     TextView tv_route_startname;
@@ -42,8 +41,9 @@ public class RouteActivity extends BaseActivity {
     TextView tv_route_distance;
     TextView tv_route_time;
     TextView tv_route_payment;
-    public static String start, end;
+    TextView tv_route_savetime;
     String startGpsX, startGpsY, endGpsX, endGpsY;
+    public static String start,end;
     GetImageURL getImagetURL;
     LinearLayout ll_firstLine;
     LinearLayout ll_first;
@@ -74,6 +74,7 @@ public class RouteActivity extends BaseActivity {
         ll_firstLine = (LinearLayout)findViewById(R.id.ll_firstline);
         ll_first = (LinearLayout)findViewById(R.id.ll_first);
         ll_first.setVisibility(View.INVISIBLE);
+        tv_route_savetime = (TextView)findViewById(R.id.tv_route_savetime);
 
     }
     @Override
@@ -112,14 +113,14 @@ public class RouteActivity extends BaseActivity {
                 nt.setMaximumFractionDigits(2);
                 double distance = routeData.getTotalDistance()/1000.0;
                 //init
-                tv_route_distance.setText("약 "+nt.format(distance)+" Km");
+                tv_route_distance.setText(nt.format(distance)+" Km");
                 tv_route_time.setText("약 "+routeData.getTotalTime()+"분");
                 tv_route_payment.setText(routeData.getPayment()+" 원");
                 String bs_Count="";
                 int subCount = routeData.getSubwayStationCount();
-                if(subCount>0)bs_Count=bs_Count+"지하철역 "+subCount;
+                if(subCount>0)bs_Count=bs_Count+"Sub "+subCount;
                 int busCount = routeData.getBusStationCount();
-                if(busCount>0)bs_Count=bs_Count+"버스정류장 "+busCount;
+                if(busCount>0)bs_Count=bs_Count+"Bus "+busCount;
                 tv_route_count.setText(bs_Count);
                 int sum = 0;
                 for(int i =0; i<sList.size();i++){
@@ -187,19 +188,19 @@ public class RouteActivity extends BaseActivity {
                 }
 
 
-
-
-
-
-
-
-
-
                 result.remove(0);
                 rv_route_result.setAdapter(new RouteAdapter(getApplicationContext(), result));
                 pb_route.setVisibility(View.INVISIBLE);
                 pb_route_first.setVisibility(View.GONE);
                 ll_first.setVisibility(View.VISIBLE);
+
+                if (routeData.getOrginalTotalTime() - Long.parseLong(routeData.getTotalTime()) > 0) {
+                    tv_route_savetime.setText((routeData.getOrginalTotalTime() - Long.parseLong(routeData.getTotalTime())) +"분 정체");
+                } else if (routeData.getOrginalTotalTime() - Long.parseLong(routeData.getTotalTime()) < 0) {
+                    tv_route_savetime.setText((Long.parseLong(routeData.getTotalTime())-routeData.getOrginalTotalTime()) +"분 절약");
+                } else {
+                    tv_route_savetime.setText("");
+                }
             }
         };
 

@@ -12,8 +12,10 @@ import com.hurryup.traffic.junga.hahaha.route.data.Section;
 import com.hurryup.traffic.junga.hahaha.route.data.Train;
 import com.hurryup.traffic.junga.hahaha.route.data.Walk;
 
+import org.json.JSONStringer;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.jsoup.HttpStatusException;
@@ -85,6 +87,7 @@ public class RouteThreadData extends Thread {
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) jsonParser.parse(text);
             JSONObject jTransfer = (JSONObject) jsonObject.get(Code.MINI_TRANSFER);
+            Long jTotalTime = (Long)jTransfer.get(Code.MINI_TOTALTIME);
             JSONObject jInfo = (JSONObject) jTransfer.get(Code.MINI_INFO);
             JSONArray jSubPath = (JSONArray) jTransfer.get(Code.MINI_SUBPATH);
 
@@ -97,9 +100,10 @@ public class RouteThreadData extends Thread {
             routeData.setTotalDistance((String) jInfo.get("totalDistance"));
             routeData.setTotalTime((String) jInfo.get("totalTime"));
             routeData.setTotalStationCount((String) jInfo.get("totalStationCount"));
-            routeData.setBusStationCount((String)jInfo.get(Code.BUS_STATION_COUNT));
-            routeData.setSubwayStationCount((String)jInfo.get(Code.SUBWAY_STATION_COUNT));
-            routeData.setWalkTotaldis((String)jInfo.get(Code.WALK_DIS));
+            routeData.setBusStationCount((String) jInfo.get(Code.BUS_STATION_COUNT));
+            routeData.setSubwayStationCount((String) jInfo.get(Code.SUBWAY_STATION_COUNT));
+            routeData.setWalkTotaldis((String) jInfo.get(Code.WALK_DIS));
+            routeData.setOrginalTotalTime(Long.parseLong(String.valueOf(jTotalTime)));
 //            routeData.setTotalTimeInfo((String) jInfo.get("totalTimeInfo"));
 
             ArrayList<Section> sectionList = new ArrayList<>();
@@ -177,11 +181,12 @@ public class RouteThreadData extends Thread {
                 result_rd.setTotalDistance((String) result_info.get("totalDistance"));
                 result_rd.setTotalStationCount((String) result_info.get("totalStationCount"));
                 result_rd.setTotalTimeInfo((String) result_info.get("totalTimeInfo"));
-                result_rd.setBusStationCount((String)result_info.get(Code.BUS_STATION_COUNT));
-                result_rd.setSubwayStationCount((String)result_info.get(Code.SUBWAY_STATION_COUNT));
-                Log.d("routeData","Sub"+result_rd.getSubwayStationCount()+"@@@@@@@@@@@@@");
+                result_rd.setBusStationCount((String) result_info.get(Code.BUS_STATION_COUNT));
+                result_rd.setSubwayStationCount((String) result_info.get(Code.SUBWAY_STATION_COUNT));
+                Log.d("routeData", "Sub" + result_rd.getSubwayStationCount() + "@@@@@@@@@@@@@");
                 Log.d("routeData","Bus"+result_rd.getBusStationCount()+"@@@@@@@@@@@@@@@@@@@@");
-                result_rd.setWalkTotaldis((String)result_info.get(Code.WALK_DIS));
+                result_rd.setWalkTotaldis((String) result_info.get(Code.WALK_DIS));
+                result_rd.setOrginalTotalTime(Long.parseLong(String.valueOf(jTotalTime)));
                 ArrayList<Section> result_s = new ArrayList<>();
 
                 for (int k = 0; k < result_subPath.size(); k++) {

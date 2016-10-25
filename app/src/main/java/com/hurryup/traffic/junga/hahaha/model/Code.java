@@ -5,6 +5,7 @@ package com.hurryup.traffic.junga.hahaha.model;
  */
 public class Code {
     public static final String MINI_TRANSFER = "miniTransfer";
+    public static final String MINI_TOTALTIME = "totalTime";
     public static final String MINI_INFO = "info";
     public static final String MINI_SUBPATH="subPath";
     public static final String MINI_START ="firstStartStation";

@@ -60,6 +60,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
     public void onBindViewHolder(RouteAdapter.MyViewHolder holder, final int position) {
         Log.d("total","onBindViewHolder");
         RouteData routeData = list.get(position);
+
         ArrayList<Section> sectionList = routeData.getSectionList();
         Log.d("total","-----------------------------------------");
         Log.d("total","Test"+routeData.getBusStationCount());
@@ -95,7 +96,15 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         //time
         holder.tv_line_time.setText("약 "+routeData.getTotalTime()+"분");
         //pay
-        holder.tv_line_payment.setText(routeData.getPayment()+" 원");
+        holder.tv_line_payment.setText(routeData.getPayment() + " 원");
+
+        if (routeData.getOrginalTotalTime() - Long.parseLong(routeData.getTotalTime()) > 0) {
+            holder.tv_line_savetime.setText((routeData.getOrginalTotalTime() - Long.parseLong(routeData.getTotalTime())) +"분 정체");
+        } else if (routeData.getOrginalTotalTime() - Long.parseLong(routeData.getTotalTime()) < 0) {
+            holder.tv_line_savetime.setText((Long.parseLong(routeData.getTotalTime())-routeData.getOrginalTotalTime()) +"분 절약");
+        } else {
+            holder.tv_line_savetime.setText("");
+        }
 
         //button
         holder.route_btn.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +141,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
 
             ImageView arrow = new ImageView(context);
-            arrow.setLayoutParams(new LinearLayout.LayoutParams(50,50));
+            arrow.setLayoutParams(new LinearLayout.LayoutParams(50, 50));
             arrow.setImageResource(R.drawable.arrow2);
             layout.addView(arrow);
 
@@ -188,6 +197,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         public TextView tv_route_time;
         public TextView tv_line_time;
         TextView tv_line_payment;
+        TextView tv_line_savetime;
         public ViewGroup route_btn;
         public LinearLayout ll_route_line;
         public CardView cardView;
@@ -201,6 +211,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             route_btn = (ViewGroup)itemView.findViewById(R.id.layout_route_recyclerview);
             tv_line_time = (TextView)itemView.findViewById(R.id.tv_line_time);
             tv_line_payment = (TextView)itemView.findViewById(R.id.tv_line_payment);
+            tv_line_savetime = (TextView)itemView.findViewById(R.id.tv_line_savetime);
         }
 
 

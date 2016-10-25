@@ -12,6 +12,7 @@ public class RouteData implements Serializable {
     private String start;
     private String end;
     private String totalTime;
+    private Long orginalTotalTime;
     private String totalTimeInfo;
     private String payment;
     private String totalStationCount;
@@ -28,6 +29,14 @@ public class RouteData implements Serializable {
         return result;
 
 
+    }
+
+    public Long getOrginalTotalTime() {
+        return orginalTotalTime;
+    }
+
+    public void setOrginalTotalTime(Long orginalTotalTime) {
+        this.orginalTotalTime = orginalTotalTime;
     }
 
     public void setBusStationCount(String busStationCount) {

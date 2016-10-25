@@ -166,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:text="34"
-                />
+                android:id="@+id/tv_route_savetime" />
 
         </RelativeLayout>
 
