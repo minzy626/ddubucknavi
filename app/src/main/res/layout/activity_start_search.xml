@@ -22,8 +22,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_search"
             android:background="@null"
-            android:ems="10" >
-            <requestFocus />
+            android:singleLine="true"
+            android:ellipsize="end"
+            >
+
         </AutoCompleteTextView>
 
         <Button
