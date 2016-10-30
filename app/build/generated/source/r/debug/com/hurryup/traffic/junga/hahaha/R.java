@@ -2032,9 +2032,9 @@ containing a value of this type.
         public static final int btn_search=0x7f020052;
         public static final int btn_start=0x7f020053;
         public static final int btn_tomap=0x7f020054;
-        public static final int bus_airport=0x7f020055;
-        public static final int bus_green=0x7f020056;
-        public static final int bus_yellow=0x7f020057;
+        public static final int img_bus_airport =0x7f020055;
+        public static final int img_bus_green =0x7f020056;
+        public static final int img_bus_yellow =0x7f020057;
         public static final int com_rounded_corner=0x7f020058;
         public static final int com_rounded_corner_white=0x7f020059;
         public static final int custom_callout_balloon=0x7f02005a;
@@ -2056,8 +2056,8 @@ containing a value of this type.
         public static final int image_route_arrow1=0x7f02006a;
         public static final int image_route_arrow2=0x7f02006b;
         public static final int image_walk=0x7f02006c;
-        public static final int img_bus_1=0x7f02006d;
-        public static final int img_bus_14=0x7f02006e;
+        public static final int img_bus_blue =0x7f02006d;
+        public static final int img_bus_yellow =0x7f02006e;
         public static final int img_bus_green=0x7f02006f;
         public static final int img_bus_red=0x7f020070;
         public static final int img_train_1=0x7f020071;

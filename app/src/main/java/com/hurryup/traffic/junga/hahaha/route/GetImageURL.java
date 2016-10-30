@@ -24,13 +24,16 @@ public class GetImageURL {
                     url = "img_bus_" + "green";
                     break;
                 case "5":
-                    url = "img_bus_" + "";
+                    url = "img_bus_" + "airport";
                     break;
                 case "11":
+                    url = "img_bus_" + "blue";
                     break;
                 case "13":
+                    url = "img_bus_" + "yellow";
                     break;
                 case "14":
+                    url = "img_bus_" + "red";
                     break;
             }
         }else if(transport instanceof Train){

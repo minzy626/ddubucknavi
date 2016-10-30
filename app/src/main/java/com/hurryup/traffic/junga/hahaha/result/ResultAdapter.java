@@ -55,7 +55,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             Bus bus = (Bus)trans;
             url.append("bus");
             int resource = getImagetURL.getImagetURL(bus);
-            holder.iv_Trans.setImageResource(R.drawable.img_bus_1);
+            holder.iv_Trans.setImageResource(R.drawable.img_bus_blue);
             holder.tv_Trans.setText(bus.getBus_Number()+"번 탑승");
             holder.tv_Start.setText(section.getStart_name()+" 정류소");
             holder.tv_End.setText(section.getEnd_name()+" 정류소 하차");
