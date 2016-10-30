@@ -2,6 +2,7 @@ package com.hurryup.traffic.junga.hahaha.result;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,13 +62,24 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             //holder.tv_Trans.setText(bus.getBus_Number());
             //holder.iv_Trans.setImageResource(getImageURL(bus));
         }else if(trans instanceof Train){
+            //String + "역" 분기처리 start
+
+            Log.d("log : ", "log1");
+            String start_name = section.getStart_name();
+            String end_name = section.getStart_name();
+            if(!start_name.endsWith("역")) start_name+="역 ";
+            if(!end_name.endsWith("역")) end_name+="역 ";
+            //String + "역" 분기처리 end
+
             Train train = (Train)trans;
             url.append("train");
             int resource = getImagetURL.getImagetURL(train);
             holder.iv_Trans.setImageResource(R.drawable.img_train_1);
             holder.tv_Trans.setText(train.getLine_number()+"호선 탑승");
-            holder.tv_Start.setText(section.getStart_name()+"");
-            holder.tv_End.setText(section.getEnd_name()+" 하차");
+            holder.tv_Start.setText(start_name);
+            holder.tv_End.setText(end_name+" 하차");
+
+
             // holder.tv_Trans.setText(train.getLine_Number());
             // holder.iv_Trans.setImageResource(getImageURL(train));
         }else{

@@ -9,30 +9,39 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".splash.SplashActivity">
+        <activity android:name=".splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".main.MainActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".main.EndSearchActivity" />
+        <activity android:name=".main.EndSearchActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".main.ListSearchActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".main.ListSearchActivity_end"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity android:name=".main.StartSearchActivity"
+            android:screenOrientation="portrait"
             android:launchMode="standard"/>
-        <activity android:name=".route.RouteActivity">
+        <activity android:name=".route.RouteActivity"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".result.ResultActivity">
+        <activity android:name=".result.ResultActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".map.MapActivity"></activity>
+        <activity android:name=".map.MapActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
