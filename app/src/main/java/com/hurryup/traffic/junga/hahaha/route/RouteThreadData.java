@@ -129,8 +129,8 @@ public class RouteThreadData extends Thread {
                         String str = (String)jLane.get(Code.LANE_SUBWAYCODE);
                         train.setLine_number(str);
                         section.setTransport(train);
-                        String startName = section.getStart_name()+"역";
-                        String endName = section.getEnd_name()+"역";
+                        String startName = section.getStart_name()+"";
+                        String endName = section.getEnd_name()+"";
                         section.setStart_name(startName);
                         section.setEnd_name(endName);
                         sectionList.add(section);

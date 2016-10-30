@@ -66,8 +66,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             int resource = getImagetURL.getImagetURL(train);
             holder.iv_Trans.setImageResource(R.drawable.img_train_1);
             holder.tv_Trans.setText(train.getLine_number()+"호선 탑승");
-            holder.tv_Start.setText(section.getStart_name()+"역");
-            holder.tv_End.setText(section.getEnd_name()+"역 하차");
+            holder.tv_Start.setText(section.getStart_name()+"");
+            holder.tv_End.setText(section.getEnd_name()+" 하차");
             // holder.tv_Trans.setText(train.getLine_Number());
             // holder.iv_Trans.setImageResource(getImageURL(train));
         }else{
