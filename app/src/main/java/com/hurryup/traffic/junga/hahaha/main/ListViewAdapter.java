@@ -1,6 +1,8 @@
 package com.hurryup.traffic.junga.hahaha.main;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +67,14 @@ public class ListViewAdapter extends BaseAdapter{
 
         holder.mText.setText(mData.mTitle);
         holder.mDate.setText(mData.mDate);
+        holder.mDate.setTextColor(Color.GRAY);
+
+        Typeface tf1 = Typeface.createFromAsset(this.mContext.getAssets() , "fonts/NanumBarunGothicBold.otf" );
+        Typeface tf2 = Typeface.createFromAsset(this.mContext.getAssets() , "fonts/NanumBarunGothic.otf" );
+
+        holder.mText.setTypeface(tf1);
+        holder.mDate.setTypeface(tf2);
+
 
         return convertView;
     }
