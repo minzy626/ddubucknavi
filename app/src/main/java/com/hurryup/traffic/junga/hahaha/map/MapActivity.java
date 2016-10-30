@@ -3,6 +3,7 @@ package com.hurryup.traffic.junga.hahaha.map;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -20,7 +21,7 @@ import net.daum.mf.map.api.CameraUpdateFactory;
 
 public class MapActivity extends AppCompatActivity implements MapView.MapViewEventListener {
 
-    String api_key ="db03b9259cfb1b5d8942e4a7d0374139";
+    String api_key ="303bd7223d9a10ff237dc41a1032a30e";
     private MapView mapView;
     private boolean isMapViewInitialized = false;//맵뷰초기화
     private MapPoint[] mPolyline2Points;//폴리라인 찍을 점들 배열
@@ -38,6 +39,7 @@ public class MapActivity extends AppCompatActivity implements MapView.MapViewEve
 
         mapView =  new MapView(this);
         mapView.setDaumMapApiKey(api_key);
+        Log.d("log : ", mapView.getKeyDispatcherState()+"");
         LinearLayout mapViewContainer = (LinearLayout) findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);//여기까지 맵뷰 띄우기
         mapView.setMapViewEventListener(this);//맵뷰이벤트리스너
