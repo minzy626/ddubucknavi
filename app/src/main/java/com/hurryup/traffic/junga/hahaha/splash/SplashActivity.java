@@ -26,7 +26,6 @@ public class SplashActivity extends Activity{
         LinearLayout ll = (LinearLayout)findViewById(R.id.splash_layout);
 
         Typeface tf1 = Typeface.createFromAsset(this.getAssets() , "fonts/NanumBarunGothicBold.otf" );
-
         tv.setTypeface(tf1);
 
         TranslateAnimation ani = new TranslateAnimation(
