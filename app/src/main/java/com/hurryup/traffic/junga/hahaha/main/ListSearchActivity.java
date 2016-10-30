@@ -67,6 +67,7 @@ public class ListSearchActivity extends BaseActivity {
         setContentView(R.layout.activity_listsearch);
         final Intent intent = getIntent();
         dest =intent.getExtras().getString("start");
+        Log.d("route","%%%%%%%%%%%%1111111111111111");
         et_search_start=(EditText)findViewById(R.id.et_search_start);
         et_search_start.setText(dest);
 

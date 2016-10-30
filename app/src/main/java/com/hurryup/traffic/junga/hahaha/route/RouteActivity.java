@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -51,6 +52,8 @@ public class RouteActivity extends AppCompatActivity {
     ProgressBar pb_route_first;
     TextView tv_route_count;
     RouteData routeData;
+    LinearLayout.LayoutParams iv_bus_params;
+    LinearLayout.LayoutParams iv_arrow_params;
     public void init(){
         Intent intent = getIntent();
         start =intent.getExtras().getString("start");
@@ -83,6 +86,14 @@ public class RouteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_route);
         getImagetURL = new GetImageURL(this);
         context = getApplicationContext();
+
+        iv_arrow_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        iv_arrow_params.height =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,20,context.getResources().getDisplayMetrics());
+        iv_arrow_params.width =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,20,context.getResources().getDisplayMetrics());
+
+        iv_bus_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        iv_bus_params.height =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,30,context.getResources().getDisplayMetrics());
+        iv_bus_params.width =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,30,context.getResources().getDisplayMetrics());
 
 
         //Initialize
@@ -118,9 +129,9 @@ public class RouteActivity extends AppCompatActivity {
                 tv_route_payment.setText(routeData.getPayment()+" 원");
                 String bs_Count="";
                 int subCount = routeData.getSubwayStationCount();
-                if(subCount>0)bs_Count=bs_Count+"Sub "+subCount;
+                if(subCount>0)bs_Count=bs_Count+" 지하철 역"+subCount;
                 int busCount = routeData.getBusStationCount();
-                if(busCount>0)bs_Count=bs_Count+"Bus "+busCount;
+                if(busCount>0)bs_Count=bs_Count+" 버스정류장"+busCount;
                 tv_route_count.setText(bs_Count);
                 int sum = 0;
                 for(int i =0; i<sList.size();i++){
@@ -135,8 +146,7 @@ public class RouteActivity extends AppCompatActivity {
                     tv.setLayoutParams(lp);
 
                     ImageView iv = new ImageView(getApplicationContext());
-                    LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(50,50);
-                    iv.setLayoutParams(lp2);
+                    iv.setLayoutParams(iv_bus_params);
 
                     StringBuilder url = new StringBuilder();
                     url.append("img_");
@@ -154,11 +164,11 @@ public class RouteActivity extends AppCompatActivity {
                     tv.setTextColor(Color.BLACK);
 
                     ImageView arrawImg = new ImageView(getApplicationContext());
-                    arrawImg.setLayoutParams(lp2);
+                    arrawImg.setLayoutParams(iv_arrow_params);
                     arrawImg.setImageResource(R.drawable.arrow2);
                     LinearLayout layout = new LinearLayout(context);
                     layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-
+                    layout.setGravity(Gravity.CENTER_VERTICAL);
                     layout.addView(arrawImg);
                     layout.addView(iv);
                     layout.addView(tv);

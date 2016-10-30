@@ -9,6 +9,7 @@ import android.text.Layout;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,8 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
     ArrayList<RouteData> list;
     Context context;
     GetImageURL getImageURL;
+    LinearLayout.LayoutParams iv_arrow_params;
+    LinearLayout.LayoutParams iv_bus_params;
     public RouteAdapter(Context context, ArrayList<RouteData> list){
         this.list = list;
         this.context = context;
@@ -52,6 +55,14 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_route,parent,false);
         MyViewHolder holder;
         holder = new MyViewHolder(v);
+
+        iv_arrow_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        iv_arrow_params.height =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,20,context.getResources().getDisplayMetrics());
+        iv_arrow_params.width =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,20,context.getResources().getDisplayMetrics());
+
+        iv_bus_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        iv_bus_params.height =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,30,context.getResources().getDisplayMetrics());
+        iv_bus_params.width =(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,30,context.getResources().getDisplayMetrics());
 
         return holder;
     }
@@ -126,6 +137,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
         Log.d("setView","setView");
         Log.d("setView","count "+sectionList.size());
         holder.ll_route_line.removeAllViews();
+        holder.ll_route_line.setGravity(Gravity.CENTER_VERTICAL);
         int sum = 0;
         for(int i=0;i<sectionList.size();i++){
             String startName = sectionList.get(i).getStart_name();
@@ -139,9 +151,9 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
 
             LinearLayout layout = new LinearLayout(context);
             layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-
+            layout.setGravity(Gravity.CENTER_VERTICAL);
             ImageView arrow = new ImageView(context);
-            arrow.setLayoutParams(new LinearLayout.LayoutParams(50, 50));
+            arrow.setLayoutParams(iv_arrow_params);
             arrow.setImageResource(R.drawable.arrow2);
             layout.addView(arrow);
 
@@ -151,7 +163,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.MyViewHolder
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,20);
             textView.setTextColor(Color.BLACK);
             ImageView imageView = new ImageView(context);
-            imageView.setLayoutParams(new LinearLayout.LayoutParams(50,50));
+            imageView.setLayoutParams(iv_bus_params);
 
             imageView.setImageResource(imgURL);
 
