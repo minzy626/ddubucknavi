@@ -6,9 +6,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hurryup.traffic.junga.hahaha.R;
@@ -24,6 +27,8 @@ public class MainActivity extends BaseActivity {
     private String startGpsX, startGpsY;
     private String endGpsX, endGpsY;
 
+    private Button bnt_startSearch;
+    private Button bnt_endSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,7 +36,28 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         et_start = (EditText)findViewById(R.id.et_start);
         et_end =(EditText)findViewById(R.id.et_end);
-        Button bnt_startSearch=(Button)findViewById(R.id.bnt_startSearch);
+
+        et_start.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_SEARCH){
+                    bnt_startSearch.performClick();
+                }
+                return true;
+            }
+        });
+
+        et_end.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_SEARCH){
+                    bnt_endSearch.performClick();
+                }
+                return true;
+            }
+        });
+
+        bnt_startSearch=(Button)findViewById(R.id.bnt_startSearch);
         bnt_startSearch.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
@@ -49,7 +75,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        Button bnt_endSearch = (Button)findViewById(R.id.bnt_endSearch);
+        bnt_endSearch = (Button)findViewById(R.id.bnt_endSearch);
         bnt_endSearch.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 end =et_end.getText().toString();
