@@ -92,7 +92,6 @@ public class ListSearchActivity extends BaseActivity {
             public void onClick(View v){
                 String dest = et_search_start.getText().toString();
                 search_Function(dest);
-                Toast.makeText(ListSearchActivity.this, "RRRRR", Toast.LENGTH_SHORT).show();
             }
         });
 
