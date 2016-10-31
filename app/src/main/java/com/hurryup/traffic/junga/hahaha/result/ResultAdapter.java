@@ -1,6 +1,8 @@
 package com.hurryup.traffic.junga.hahaha.result;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,9 +58,9 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
             url.append("bus");
             int resource = getImagetURL.getImagetURL(bus);
             holder.iv_Trans.setImageResource(R.drawable.img_bus_blue);
-            holder.tv_Trans.setText(bus.getBus_Number()+"번 탑승");
-            holder.tv_Start.setText(section.getStart_name()+" 정류소");
-            holder.tv_End.setText(section.getEnd_name()+" 정류소 하차");
+            holder.tv_Trans.setText(bus.getBus_Number() + "번 탑승");
+            holder.tv_Start.setText(section.getStart_name() + " 정류소");
+            holder.tv_End.setText(section.getEnd_name() + " 정류소 하차");
             //holder.tv_Trans.setText(bus.getBus_Number());
             //holder.iv_Trans.setImageResource(getImageURL(bus));
         }else if(trans instanceof Train){
@@ -106,6 +108,15 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
         int imgURL = getImagetURL.getImagetURL(transport);
         holder.iv_Trans.setImageResource(imgURL);
         //여기
+
+        Typeface tf1 = Typeface.createFromAsset(this.context.getAssets() , "fonts/NanumBarunGothicBold.otf" );
+        Typeface tf2 = Typeface.createFromAsset(this.context.getAssets() , "fonts/NanumBarunGothic.otf" );
+
+        holder.tv_Start.setTypeface(tf1);
+        holder.tv_Start.setTextColor(Color.parseColor("#5ec0c8"));
+        holder.tv_Trans.setTypeface(tf2);
+        holder.tv_Time.setTypeface(tf2);
+        holder.tv_End.setTypeface(tf2);
     }
 
     @Override
